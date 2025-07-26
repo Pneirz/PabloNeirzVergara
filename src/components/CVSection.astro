@@ -1,0 +1,23 @@
+---
+export interface Props {
+  title: string;
+  icon?: string;
+}
+
+const { title, icon } = Astro.props;
+---
+
+<section class="mb-8">
+  <div class="mb-4">
+    <div class="flex items-center gap-2 mb-2">
+      {icon && (
+        <div class="w-6 h-6 text-blue-600" set:html={icon}></div>
+      )}
+      <h3 class="text-2xl font-bold text-gray-900">{title}</h3>
+    </div>
+    <hr class="border-t-2" style="border-color: #156082;" />
+  </div>
+  <div class="space-y-4">
+    <slot />
+  </div>
+</section>
