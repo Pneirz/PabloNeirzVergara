@@ -10,7 +10,7 @@ export interface Props {
 const { categories } = Astro.props;
 
 const getColorClasses = (color: string = "blue") => {
-  const colors = {
+  const colors: { [key: string]: string } = {
     blue: "bg-blue-100 text-blue-800",
     green: "bg-green-100 text-green-800",
     purple: "bg-purple-100 text-purple-800",
