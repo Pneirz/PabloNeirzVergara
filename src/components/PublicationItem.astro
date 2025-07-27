@@ -13,46 +13,52 @@ const { title, authors, publication, date, doi, link, description } =
   Astro.props;
 ---
 
-<div class="border-l-4 border-purple-600 pl-4 relative">
-  <div class="absolute w-3 h-3 bg-purple-600 rounded-full -left-2.5 top-0">
-  </div>
+<ol
+  class="relative space-y-8 before:absolute before:-ml-px before:h-full before:w-0.5 before:rounded-full before:bg-gray-200"
+>
+  <li class="relative -ms-1.5 flex items-start gap-4">
+    <span class="size-3 shrink-0 rounded-full bg-blue-600"></span>
+    <div class="flex-grow">
+      <div class="mb-2">
+        <h4 class="text-lg font-semibold text-gray-900 mb-1">{title}</h4>
+        <p class="text-sm text-gray-600 mb-1">
+          <span class="font-medium">Autores:</span>
+          {authors.join(", ")}
+        </p>
+        <p class="text-sm text-purple-600 font-medium mb-1">{publication}</p>
+        <p class="text-sm text-gray-500">{date}</p>
+      </div>
 
-  <div class="mb-2">
-    <h4 class="text-lg font-semibold text-gray-900 mb-1">{title}</h4>
-    <p class="text-sm text-gray-600 mb-1">
-      <span class="font-medium">Autores:</span>
-      {authors.join(", ")}
-    </p>
-    <p class="text-sm text-purple-600 font-medium mb-1">{publication}</p>
-    <p class="text-sm text-gray-500">{date}</p>
-  </div>
+      {
+        description && (
+          <p class="text-sm text-gray-700 mb-2 leading-relaxed">
+            {description}
+          </p>
+        )
+      }
 
-  {
-    description && (
-      <p class="text-sm text-gray-700 mb-2 leading-relaxed">{description}</p>
-    )
-  }
-
-  <div class="flex gap-3 text-sm">
-    {
-      doi && (
-        <a
-          href={`https://doi.org/${doi}`}
-          class="text-blue-600 hover:text-blue-800 transition-colors"
-        >
-          DOI: {doi}
-        </a>
-      )
-    }
-    {
-      link && (
-        <a
-          href={link}
-          class="text-blue-600 hover:text-blue-800 transition-colors"
-        >
-          Ver publicación
-        </a>
-      )
-    }
-  </div>
-</div>
+      <div class="flex gap-3 text-sm">
+        {
+          doi && (
+            <a
+              href={`https://doi.org/${doi}`}
+              class="text-blue-600 hover:text-blue-800 transition-colors"
+            >
+              DOI: {doi}
+            </a>
+          )
+        }
+        {
+          link && (
+            <a
+              href={link}
+              class="text-blue-600 hover:text-blue-800 transition-colors"
+            >
+              Ver publicación
+            </a>
+          )
+        }
+      </div>
+    </div>
+  </li>
+</ol>
