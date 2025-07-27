@@ -1,15 +1,15 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import CVHeader from '../components/CVHeader.astro';
-import CVSection from '../components/CVSection.astro';
-import ExperienceItem from '../components/ExperienceItem.astro';
-import EducationItem from '../components/EducationItem.astro';
-import PublicationItem from '../components/PublicationItem.astro';
-import SkillsSection from '../components/SkillsSection.astro';
+import Layout from "../layouts/Layout.astro";
+import CVHeader from "../components/CVHeader.astro";
+import CVSection from "../components/CVSection.astro";
+import ExperienceItem from "../components/ExperienceItem.astro";
+import EducationItem from "../components/EducationItem.astro";
+import PublicationItem from "../components/PublicationItem.astro";
+import SkillsSection from "../components/SkillsSection.astro";
 ---
 
 <Layout title="Currículum Vitae">
-  <div class="min-h-screen py-8 px-4" style="background-color: #eef3f4;">
+  <div class="min-h-screen py-8 px-4 bg-blue-50">
     <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-lg p-4 sm:p-8">
       <!-- Header con información personal -->
       <CVHeader
@@ -26,9 +26,11 @@ import SkillsSection from '../components/SkillsSection.astro';
       <!-- Resumen Profesional -->
       <CVSection title="Resumen Profesional">
         <p class="text-gray-700 leading-relaxed text-justify">
-          Desarrolladora Full Stack con más de 5 años de experiencia en el desarrollo de aplicaciones web modernas. 
-          Especializada en React, Node.js y arquitecturas cloud. Apasionada por crear soluciones escalables y 
-          centradas en el usuario. Experiencia liderando equipos técnicos y mentoring de desarrolladores junior.
+          Desarrolladora Full Stack con más de 5 años de experiencia en el
+          desarrollo de aplicaciones web modernas. Especializada en React,
+          Node.js y arquitecturas cloud. Apasionada por crear soluciones
+          escalables y centradas en el usuario. Experiencia liderando equipos
+          técnicos y mentoring de desarrolladores junior.
         </p>
       </CVSection>
 
@@ -43,9 +45,16 @@ import SkillsSection from '../components/SkillsSection.astro';
             "Lideré el desarrollo de una plataforma SaaS que aumentó los ingresos en un 40%",
             "Implementé arquitectura de microservicios usando Node.js y Docker",
             "Mentoricé a un equipo de 4 desarrolladores junior",
-            "Mejoré el rendimiento de la aplicación en un 60% optimizando consultas SQL"
+            "Mejoré el rendimiento de la aplicación en un 60% optimizando consultas SQL",
           ]}
-          technologies={["React", "Node.js", "TypeScript", "PostgreSQL", "AWS", "Docker"]}
+          technologies={[
+            "React",
+            "Node.js",
+            "TypeScript",
+            "PostgreSQL",
+            "AWS",
+            "Docker",
+          ]}
         />
 
         <ExperienceItem
@@ -56,9 +65,15 @@ import SkillsSection from '../components/SkillsSection.astro';
           description={[
             "Desarrollé aplicaciones web responsivas para clientes del sector financiero",
             "Implementé APIs RESTful con autenticación JWT",
-            "Colaboré en metodologías ágiles (Scrum) con equipos multidisciplinarios"
+            "Colaboré en metodologías ágiles (Scrum) con equipos multidisciplinarios",
           ]}
-          technologies={["Vue.js", "Express.js", "MongoDB", "Firebase", "Tailwind CSS"]}
+          technologies={[
+            "Vue.js",
+            "Express.js",
+            "MongoDB",
+            "Firebase",
+            "Tailwind CSS",
+          ]}
         />
 
         <ExperienceItem
@@ -69,9 +84,15 @@ import SkillsSection from '../components/SkillsSection.astro';
           description={[
             "Desarrollé interfaces de usuario interactivas para aplicaciones móviles",
             "Integré APIs de terceros para funcionalidades de pago y geolocalización",
-            "Implementé testing automatizado aumentando la cobertura al 85%"
+            "Implementé testing automatizado aumentando la cobertura al 85%",
           ]}
-          technologies={["React Native", "JavaScript", "Redux", "Jest", "Stripe API"]}
+          technologies={[
+            "React Native",
+            "JavaScript",
+            "Redux",
+            "Jest",
+            "Stripe API",
+          ]}
         />
       </CVSection>
 
@@ -85,7 +106,7 @@ import SkillsSection from '../components/SkillsSection.astro';
           gpa="8.5/10"
           achievements={[
             "Tesis sobre 'Optimización de Aplicaciones Web usando Machine Learning'",
-            "Premio a la mejor investigación en tecnologías emergentes"
+            "Premio a la mejor investigación en tecnologías emergentes",
           ]}
         />
 
@@ -97,7 +118,7 @@ import SkillsSection from '../components/SkillsSection.astro';
           gpa="7.8/10"
           achievements={[
             "Especialización en Desarrollo de Software",
-            "Proyecto final: Sistema de gestión hospitalaria"
+            "Proyecto final: Sistema de gestión hospitalaria",
           ]}
         />
       </CVSection>
@@ -109,33 +130,58 @@ import SkillsSection from '../components/SkillsSection.astro';
             {
               title: "Lenguajes de Programación",
               skills: ["JavaScript", "TypeScript", "Python", "Java", "SQL"],
-              color: "blue"
+              color: "blue",
             },
             {
               title: "Frontend",
-              skills: ["React", "Vue.js", "Angular", "Tailwind CSS", "SASS", "Webpack"],
-              color: "green"
+              skills: [
+                "React",
+                "Vue.js",
+                "Angular",
+                "Tailwind CSS",
+                "SASS",
+                "Webpack",
+              ],
+              color: "green",
             },
             {
               title: "Backend",
-              skills: ["Node.js", "Express.js", "Django", "Spring Boot", "GraphQL"],
-              color: "purple"
+              skills: [
+                "Node.js",
+                "Express.js",
+                "Django",
+                "Spring Boot",
+                "GraphQL",
+              ],
+              color: "purple",
             },
             {
               title: "Bases de Datos",
-              skills: ["PostgreSQL", "MongoDB", "MySQL", "Redis", "Elasticsearch"],
-              color: "orange"
+              skills: [
+                "PostgreSQL",
+                "MongoDB",
+                "MySQL",
+                "Redis",
+                "Elasticsearch",
+              ],
+              color: "orange",
             },
             {
               title: "DevOps & Cloud",
-              skills: ["AWS", "Docker", "Kubernetes", "Jenkins", "GitHub Actions"],
-              color: "red"
+              skills: [
+                "AWS",
+                "Docker",
+                "Kubernetes",
+                "Jenkins",
+                "GitHub Actions",
+              ],
+              color: "red",
             },
             {
               title: "Herramientas",
               skills: ["Git", "Jira", "Figma", "Postman", "VS Code"],
-              color: "gray"
-            }
+              color: "gray",
+            },
           ]}
         />
       </CVSection>
@@ -164,25 +210,37 @@ import SkillsSection from '../components/SkillsSection.astro';
       <!-- Certificaciones -->
       <CVSection title="Certificaciones">
         <div class="space-y-3">
-          <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+          <div
+            class="flex justify-between items-center p-3 bg-gray-50 rounded-lg"
+          >
             <div>
-              <h4 class="font-semibold text-gray-900">AWS Certified Solutions Architect</h4>
+              <h4 class="font-semibold text-gray-900">
+                AWS Certified Solutions Architect
+              </h4>
               <p class="text-sm text-gray-600">Amazon Web Services</p>
             </div>
             <span class="text-sm text-gray-500">2023</span>
           </div>
 
-          <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+          <div
+            class="flex justify-between items-center p-3 bg-gray-50 rounded-lg"
+          >
             <div>
-              <h4 class="font-semibold text-gray-900">Professional Scrum Master I</h4>
+              <h4 class="font-semibold text-gray-900">
+                Professional Scrum Master I
+              </h4>
               <p class="text-sm text-gray-600">Scrum.org</p>
             </div>
             <span class="text-sm text-gray-500">2022</span>
           </div>
 
-          <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+          <div
+            class="flex justify-between items-center p-3 bg-gray-50 rounded-lg"
+          >
             <div>
-              <h4 class="font-semibold text-gray-900">React Developer Certification</h4>
+              <h4 class="font-semibold text-gray-900">
+                React Developer Certification
+              </h4>
               <p class="text-sm text-gray-600">Meta</p>
             </div>
             <span class="text-sm text-gray-500">2021</span>
@@ -207,7 +265,6 @@ import SkillsSection from '../components/SkillsSection.astro';
           </div>
         </div>
       </CVSection>
-
     </div>
   </div>
 </Layout>
