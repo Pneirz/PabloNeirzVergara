@@ -4,14 +4,24 @@ export interface Props {
   title: string;
   email: string;
   phone: string;
-  location: string;
+  location?: string;
   linkedin?: string;
   github?: string;
   website?: string;
+  diplomas?: string;
 }
 
-const { name, title, email, phone, location, linkedin, github, website } =
-  Astro.props;
+const {
+  name,
+  title,
+  email,
+  phone,
+  location,
+  linkedin,
+  github,
+  website,
+  diplomas,
+} = Astro.props;
 ---
 
 <header class="text-center mb-8" style="padding: 2rem; border-radius: 0.5rem;">
@@ -39,19 +49,24 @@ const { name, title, email, phone, location, linkedin, github, website } =
       <span>{phone}</span>
     </div>
 
-    <div class="flex items-center gap-1">
-      <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-        <path
-          fill-rule="evenodd"
-          d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
-          clip-rule="evenodd"></path>
-      </svg>
-      <span>{location}</span>
-    </div>
+    {
+      location && (
+        <div class="flex items-center gap-1">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+            <path
+              fill-rule="evenodd"
+              d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+              clip-rule="evenodd"
+            />
+          </svg>
+          <span>{location}</span>
+        </div>
+      )
+    }
   </div>
 
   {
-    (linkedin || github || website) && (
+    (linkedin || github || website || diplomas) && (
       <div class="flex justify-center gap-4 mt-4">
         {linkedin && (
           <a
@@ -75,6 +90,14 @@ const { name, title, email, phone, location, linkedin, github, website } =
             class="text-green-600 hover:text-green-800 transition-colors text-sm"
           >
             Website
+          </a>
+        )}
+        {diplomas && (
+          <a
+            href={diplomas}
+            class="text-purple-600 hover:text-purple-800 transition-colors text-sm"
+          >
+            Diplomas
           </a>
         )}
       </div>

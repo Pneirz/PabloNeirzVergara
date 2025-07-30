@@ -6,6 +6,10 @@ import ExperienceItem from "../components/ExperienceItem.astro";
 import EducationItem from "../components/EducationItem.astro";
 import PublicationItem from "../components/PublicationItem.astro";
 import SkillsSection from "../components/SkillsSection.astro";
+import cvData from "../data/cv-data.json";
+import type { CVData } from "../types/cv-types";
+
+const data: CVData = cvData as CVData;
 ---
 
 <Layout title="Currículum Vitae">
@@ -13,256 +17,128 @@ import SkillsSection from "../components/SkillsSection.astro";
     <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-lg p-4 sm:p-8">
       <!-- Header con información personal -->
       <CVHeader
-        name="María González Pérez"
-        title="Desarrolladora Full Stack Senior"
-        email="maria.gonzalez@email.com"
-        phone="+34 123 456 789"
-        location="Madrid, España"
-        linkedin="https://linkedin.com/in/mariagonzalez"
-        github="https://github.com/mariagonzalez"
-        website="https://mariagonzalez.dev"
+        name={data.personalInfo.name}
+        title={data.personalInfo.title}
+        email={data.personalInfo.email}
+        phone={data.personalInfo.phone}
+        location={data.personalInfo.location}
+        linkedin={data.personalInfo.linkedin}
+        github={data.personalInfo.github}
+        website={data.personalInfo.website}
+        diplomas={data.personalInfo.diplomas}
       />
 
       <!-- Resumen Profesional -->
       <CVSection title="Resumen Profesional">
         <p class="text-gray-700 leading-relaxed text-justify">
-          Desarrolladora Full Stack con más de 5 años de experiencia en el
-          desarrollo de aplicaciones web modernas. Especializada en React,
-          Node.js y arquitecturas cloud. Apasionada por crear soluciones
-          escalables y centradas en el usuario. Experiencia liderando equipos
-          técnicos y mentoring de desarrolladores junior.
+          {data.summary}
         </p>
       </CVSection>
 
       <!-- Experiencia Laboral -->
       <CVSection title="Experiencia Laboral">
-        <ExperienceItem
-          position="Senior Full Stack Developer"
-          company="TechCorp Solutions"
-          period="Enero 2022 - Presente"
-          location="Madrid, España"
-          description={[
-            "Lideré el desarrollo de una plataforma SaaS que aumentó los ingresos en un 40%",
-            "Implementé arquitectura de microservicios usando Node.js y Docker",
-            "Mentoricé a un equipo de 4 desarrolladores junior",
-            "Mejoré el rendimiento de la aplicación en un 60% optimizando consultas SQL",
-          ]}
-          technologies={[
-            "React",
-            "Node.js",
-            "TypeScript",
-            "PostgreSQL",
-            "AWS",
-            "Docker",
-          ]}
-        />
-
-        <ExperienceItem
-          position="Full Stack Developer"
-          company="Innovate Digital"
-          period="Marzo 2020 - Diciembre 2021"
-          location="Barcelona, España"
-          description={[
-            "Desarrollé aplicaciones web responsivas para clientes del sector financiero",
-            "Implementé APIs RESTful con autenticación JWT",
-            "Colaboré en metodologías ágiles (Scrum) con equipos multidisciplinarios",
-          ]}
-          technologies={[
-            "Vue.js",
-            "Express.js",
-            "MongoDB",
-            "Firebase",
-            "Tailwind CSS",
-          ]}
-        />
-
-        <ExperienceItem
-          position="Frontend Developer"
-          company="StartUp Tech"
-          period="Junio 2019 - Febrero 2020"
-          location="Valencia, España"
-          description={[
-            "Desarrollé interfaces de usuario interactivas para aplicaciones móviles",
-            "Integré APIs de terceros para funcionalidades de pago y geolocalización",
-            "Implementé testing automatizado aumentando la cobertura al 85%",
-          ]}
-          technologies={[
-            "React Native",
-            "JavaScript",
-            "Redux",
-            "Jest",
-            "Stripe API",
-          ]}
-        />
+        {
+          data.experience.map((exp) => (
+            <ExperienceItem
+              position={exp.position}
+              company={exp.company}
+              period={exp.period}
+              location={exp.location}
+              description={exp.description}
+              technologies={exp.technologies}
+            />
+          ))
+        }
       </CVSection>
 
       <!-- Educación -->
       <CVSection title="Educación">
-        <EducationItem
-          degree="Máster en Ingeniería de Software"
-          institution="Universidad Politécnica de Madrid"
-          period="2018 - 2019"
-          location="Madrid, España"
-          gpa="8.5/10"
-          achievements={[
-            "Tesis sobre 'Optimización de Aplicaciones Web usando Machine Learning'",
-            "Premio a la mejor investigación en tecnologías emergentes",
-          ]}
-        />
-
-        <EducationItem
-          degree="Grado en Ingeniería Informática"
-          institution="Universidad de Valencia"
-          period="2014 - 2018"
-          location="Valencia, España"
-          gpa="7.8/10"
-          achievements={[
-            "Especialización en Desarrollo de Software",
-            "Proyecto final: Sistema de gestión hospitalaria",
-          ]}
-        />
+        {
+          data.education.map((edu) => (
+            <EducationItem
+              degree={edu.degree}
+              institution={edu.institution}
+              period={edu.period}
+              location={edu.location}
+              gpa={edu.gpa}
+              achievements={edu.achievements}
+            />
+          ))
+        }
       </CVSection>
 
       <!-- Habilidades -->
       <CVSection title="Habilidades Técnicas">
-        <SkillsSection
-          categories={[
-            {
-              title: "Lenguajes de Programación",
-              skills: ["JavaScript", "TypeScript", "Python", "Java", "SQL"],
-              color: "blue",
-            },
-            {
-              title: "Frontend",
-              skills: [
-                "React",
-                "Vue.js",
-                "Angular",
-                "Tailwind CSS",
-                "SASS",
-                "Webpack",
-              ],
-              color: "green",
-            },
-            {
-              title: "Backend",
-              skills: [
-                "Node.js",
-                "Express.js",
-                "Django",
-                "Spring Boot",
-                "GraphQL",
-              ],
-              color: "purple",
-            },
-            {
-              title: "Bases de Datos",
-              skills: [
-                "PostgreSQL",
-                "MongoDB",
-                "MySQL",
-                "Redis",
-                "Elasticsearch",
-              ],
-              color: "orange",
-            },
-            {
-              title: "DevOps & Cloud",
-              skills: [
-                "AWS",
-                "Docker",
-                "Kubernetes",
-                "Jenkins",
-                "GitHub Actions",
-              ],
-              color: "red",
-            },
-            {
-              title: "Herramientas",
-              skills: ["Git", "Jira", "Figma", "Postman", "VS Code"],
-              color: "gray",
-            },
-          ]}
-        />
+        <SkillsSection categories={data.skills.categories} />
       </CVSection>
 
       <!-- Publicaciones -->
       <CVSection title="Publicaciones">
-        <PublicationItem
-          title="Machine Learning para Optimización de Rendimiento Web"
-          authors={["María González", "Dr. Carlos Ruiz", "Dra. Ana Martín"]}
-          publication="Revista Española de Ingeniería de Software"
-          date="Marzo 2023"
-          doi="10.1234/resis.2023.0045"
-          description="Investigación sobre el uso de algoritmos de ML para predecir y optimizar el rendimiento de aplicaciones web en tiempo real."
-        />
+        {
+          data.publications.map((pub) => (
+            <PublicationItem
+              title={pub.title}
+              authors={pub.authors}
+              publication={pub.publication}
+              date={pub.date}
+              doi={pub.doi}
+              link={pub.link}
+              description={pub.description}
+            />
+          ))
+        }
+      </CVSection>
 
-        <PublicationItem
-          title="Arquitecturas Serverless: Un Enfoque Práctico"
-          authors={["María González", "Equipo TechCorp"]}
-          publication="Conferencia Internacional de Desarrollo Web"
-          date="Noviembre 2022"
-          link="https://example.com/publication"
-          description="Análisis comparativo de diferentes arquitecturas serverless y su implementación en entornos de producción."
-        />
+      <!-- Competencias -->
+      <CVSection title="Competencias">
+        <div class="space-y-3">
+          {
+            data.competitions.map((comp) => (
+              <div class="flex justify-between items-center p-4 bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-100 rounded-lg hover:shadow-md transition-shadow">
+                <div>
+                  <h4 class="font-semibold text-gray-900">{comp.title}</h4>
+                  <p class="text-sm text-gray-600">{comp.platform}</p>
+                  <p class="text-xs text-gray-500 mt-1">{comp.description}</p>
+                </div>
+                <div class="text-right">
+                  <span class="inline-block px-3 py-1 text-sm font-medium text-blue-800 bg-blue-100 rounded-full">
+                    {comp.position}
+                  </span>
+                </div>
+              </div>
+            ))
+          }
+        </div>
       </CVSection>
 
       <!-- Certificaciones -->
       <CVSection title="Certificaciones">
         <div class="space-y-3">
-          <div
-            class="flex justify-between items-center p-3 bg-gray-50 rounded-lg"
-          >
-            <div>
-              <h4 class="font-semibold text-gray-900">
-                AWS Certified Solutions Architect
-              </h4>
-              <p class="text-sm text-gray-600">Amazon Web Services</p>
-            </div>
-            <span class="text-sm text-gray-500">2023</span>
-          </div>
-
-          <div
-            class="flex justify-between items-center p-3 bg-gray-50 rounded-lg"
-          >
-            <div>
-              <h4 class="font-semibold text-gray-900">
-                Professional Scrum Master I
-              </h4>
-              <p class="text-sm text-gray-600">Scrum.org</p>
-            </div>
-            <span class="text-sm text-gray-500">2022</span>
-          </div>
-
-          <div
-            class="flex justify-between items-center p-3 bg-gray-50 rounded-lg"
-          >
-            <div>
-              <h4 class="font-semibold text-gray-900">
-                React Developer Certification
-              </h4>
-              <p class="text-sm text-gray-600">Meta</p>
-            </div>
-            <span class="text-sm text-gray-500">2021</span>
-          </div>
+          {
+            data.certifications.map((cert) => (
+              <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                <div>
+                  <h4 class="font-semibold text-gray-900">{cert.name}</h4>
+                  <p class="text-sm text-gray-600">{cert.issuer}</p>
+                </div>
+                <span class="text-sm text-gray-500">{cert.year}</span>
+              </div>
+            ))
+          }
         </div>
       </CVSection>
 
       <!-- Idiomas -->
       <CVSection title="Idiomas">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div class="text-center p-4 bg-gray-50 rounded-lg">
-            <h4 class="font-semibold text-gray-900">Español</h4>
-            <p class="text-sm text-gray-600">Nativo</p>
-          </div>
-          <div class="text-center p-4 bg-gray-50 rounded-lg">
-            <h4 class="font-semibold text-gray-900">Inglés</h4>
-            <p class="text-sm text-gray-600">Avanzado (C1)</p>
-          </div>
-          <div class="text-center p-4 bg-gray-50 rounded-lg">
-            <h4 class="font-semibold text-gray-900">Francés</h4>
-            <p class="text-sm text-gray-600">Intermedio (B2)</p>
-          </div>
+          {
+            data.languages.map((lang) => (
+              <div class="text-center p-4 bg-gray-50 rounded-lg">
+                <h4 class="font-semibold text-gray-900">{lang.name}</h4>
+                <p class="text-sm text-gray-600">{lang.level}</p>
+              </div>
+            ))
+          }
         </div>
       </CVSection>
     </div>

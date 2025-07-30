@@ -10,6 +10,14 @@ export interface Props {
 
 const { position, company, period, location, description, technologies } =
   Astro.props;
+
+// Function to convert markdown links to HTML
+function processMarkdownLinks(text: string): string {
+  return text.replace(
+    /\[([^\]]+)\]\(([^)]+)\)/g,
+    '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 underline">$1</a>'
+  );
+}
 ---
 
 <ol
@@ -34,7 +42,10 @@ const { position, company, period, location, description, technologies } =
       <ul class="list-disc list-inside space-y-1 text-gray-700 mb-3">
         {
           description.map((item) => (
-            <li class="text-sm leading-relaxed">{item}</li>
+            <li
+              class="text-sm leading-relaxed"
+              set:html={processMarkdownLinks(item)}
+            />
           ))
         }
       </ul>
