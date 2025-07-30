@@ -42,6 +42,8 @@ const { title, authors, publication, date, doi, link, description } =
           doi && (
             <a
               href={`https://doi.org/${doi}`}
+              target="_blank"
+              rel="noopener noreferrer"
               class="text-blue-600 hover:text-blue-800 transition-colors"
             >
               DOI: {doi}
@@ -52,6 +54,8 @@ const { title, authors, publication, date, doi, link, description } =
           link && (
             <a
               href={link}
+              target="_blank"
+              rel="noopener noreferrer"
               class="text-blue-600 hover:text-blue-800 transition-colors"
             >
               Ver publicación

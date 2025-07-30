@@ -51,6 +51,7 @@ export interface Publication {
 export interface Competition {
   title: string;
   platform: string;
+	url?: string; // Optional URL for the competition
 	position: string;
 	description?: string;
 }
