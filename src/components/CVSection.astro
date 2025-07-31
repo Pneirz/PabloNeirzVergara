@@ -2,12 +2,13 @@
 export interface Props {
   title: string;
   icon?: string;
+  id?: string;
 }
 
-const { title, icon } = Astro.props;
+const { title, icon, id } = Astro.props;
 ---
 
-<section class="mb-8">
+<section class="mb-8" id={id}>
   <div class="mb-4">
     <div class="flex items-center gap-2 mb-2">
       {icon && <div class="w-6 h-6 text-blue-600" set:html={icon} />}
