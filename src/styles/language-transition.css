@@ -1,0 +1,59 @@
+/* Language transition effects */
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0.5;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0.5;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.language-transition #cv-content {
+  animation: fadeOut 0.25s ease-out forwards, fadeIn 0.25s ease-in 0.25s forwards;
+}
+
+/* Language switcher styles */
+.language-switcher {
+  position: relative;
+  z-index: 10;
+}
+
+.language-switcher button {
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.language-switcher button:focus {
+  outline: none;
+}
+
+/* Add a subtle pulse animation when language changes */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.language-changed .language-switcher {
+  animation: pulse 0.5s ease-in-out;
+}

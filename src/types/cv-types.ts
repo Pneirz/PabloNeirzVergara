@@ -7,7 +7,7 @@ export interface PersonalInfo {
   linkedin?: string;
   github?: string;
   website?: string;
-	diplomas?: string; // Optional field for diplomas or additional documents
+  diplomas?: string; // Optional field for diplomas or additional documents
 }
 
 export interface Experience {
@@ -51,9 +51,9 @@ export interface Publication {
 export interface Competition {
   title: string;
   platform: string;
-	url?: string; // Optional URL for the competition
-	position: string;
-	description?: string;
+  url?: string; // Optional URL for the competition
+  position: string;
+  description?: string;
 }
 
 export interface Certification {

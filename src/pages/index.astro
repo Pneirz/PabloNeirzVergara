@@ -6,156 +6,368 @@ import ExperienceItem from "../components/ExperienceItem.astro";
 import EducationItem from "../components/EducationItem.astro";
 import PublicationItem from "../components/PublicationItem.astro";
 import SkillsSection from "../components/SkillsSection.astro";
-import cvData from "../data/cv-data.json";
+import LanguageSwitcher from "../components/LanguageSwitcher.astro";
+import cvDataEs from "../data/cv-data.json";
+import cvDataEn from "../data/cv-data-en.json";
 import type { CVData } from "../types/cv-types";
 
-const data: CVData = cvData as CVData;
+// We'll use Spanish as the default data, but the client-side script will update it
+const defaultData: CVData = cvDataEs as unknown as CVData;
+
+// Translation mapping for section titles
+const translations = {
+  es: {
+    title: "Currículum Vitae",
+    summary: "Resumen Profesional",
+    experience: "Experiencia Laboral",
+    education: "Educación",
+    skills: "Habilidades Técnicas",
+    publications: "Publicaciones",
+    competitions: "Competencias",
+    certifications: "Certificaciones",
+    languages: "Idiomas",
+    link: "Enlace",
+  },
+  en: {
+    title: "Resume",
+    summary: "Professional Summary",
+    experience: "Work Experience",
+    education: "Education",
+    skills: "Technical Skills",
+    publications: "Publications",
+    competitions: "Competitions",
+    certifications: "Certifications",
+    languages: "Languages",
+    link: "Link",
+  },
+};
 ---
 
-<Layout title="Currículum Vitae">
+<Layout title={`${translations.es.title} - Pablo Neirz Vergara`}>
   <div class="min-h-screen py-8 px-4 bg-blue-50">
     <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-lg p-4 sm:p-8">
-      <!-- Header con información personal -->
-      <CVHeader
-        name={data.personalInfo.name}
-        title={data.personalInfo.title}
-        email={data.personalInfo.email}
-        phone={data.personalInfo.phone}
-        location={data.personalInfo.location}
-        linkedin={data.personalInfo.linkedin}
-        github={data.personalInfo.github}
-        website={data.personalInfo.website}
-        diplomas={data.personalInfo.diplomas}
-      />
+      <!-- Language Switcher -->
+      <div class="flex justify-end mb-4">
+        <LanguageSwitcher />
+      </div>
 
-      <!-- Resumen Profesional -->
-      <CVSection title="Resumen Profesional">
-        <p class="text-gray-700 leading-relaxed text-justify">
-          {data.summary}
-        </p>
-      </CVSection>
+      <!-- Main CV Content -->
+      <div id="cv-content">
+        <CVHeader
+          name={defaultData.personalInfo.name}
+          title={defaultData.personalInfo.title}
+          email={defaultData.personalInfo.email}
+          phone={defaultData.personalInfo.phone}
+          location={defaultData.personalInfo.location}
+          linkedin={defaultData.personalInfo.linkedin}
+          github={defaultData.personalInfo.github}
+          website={defaultData.personalInfo.website}
+          diplomas={defaultData.personalInfo.diplomas}
+        />
 
-      <!-- Experiencia Laboral -->
-      <CVSection title="Experiencia Laboral">
-        {
-          data.experience.map((exp) => (
-            <ExperienceItem
-              position={exp.position}
-              company={exp.company}
-              period={exp.period}
-              location={exp.location}
-              description={exp.description}
-              technologies={exp.technologies}
-            />
-          ))
-        }
-      </CVSection>
+        <!-- Resumen Profesional -->
+        <CVSection title={translations.es.summary} id="summary-section">
+          <p
+            class="text-gray-700 leading-relaxed text-justify"
+            id="summary-text"
+          >
+            {defaultData.summary}
+          </p>
+        </CVSection>
 
-      <!-- Educación -->
-      <CVSection title="Educación">
-        {
-          data.education.map((edu) => (
-            <EducationItem
-              degree={edu.degree}
-              institution={edu.institution}
-              period={edu.period}
-              location={edu.location}
-              gpa={edu.gpa}
-              achievements={edu.achievements}
-            />
-          ))
-        }
-      </CVSection>
-
-      <!-- Habilidades -->
-      <CVSection title="Habilidades Técnicas">
-        <SkillsSection categories={data.skills.categories} />
-      </CVSection>
-
-      <!-- Publicaciones -->
-      <CVSection title="Publicaciones">
-        {
-          data.publications.map((pub) => (
-            <PublicationItem
-              title={pub.title}
-              authors={pub.authors}
-              publication={pub.publication}
-              date={pub.date}
-              doi={pub.doi}
-              link={pub.link}
-              description={pub.description}
-            />
-          ))
-        }
-      </CVSection>
-
-      <!-- Competencias -->
-      <CVSection title="Competencias">
-        <div class="space-y-3">
+        <!-- Experiencia Laboral -->
+        <CVSection title={translations.es.experience} id="experience-section">
           {
-            data.competitions.map((comp) => (
-              <div class="flex justify-between items-center p-4 bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-100 rounded-lg hover:shadow-md transition-shadow">
-                <div>
-                  <h4 class="font-semibold text-gray-900">{comp.title}</h4>
-                  <div class="text-sm text-gray-600">
-                    {comp.platform}
-                    {comp.url && (
-                      <>
-                        {" | "}
-                        <a
-                          href={comp.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          class="text-blue-600 hover:text-blue-800 underline"
-                        >
-                          Enlace
-                        </a>
-                      </>
-                    )}
+            defaultData.experience.map((exp, index) => (
+              <ExperienceItem
+                position={exp.position}
+                company={exp.company}
+                period={exp.period}
+                location={exp.location}
+                description={exp.description}
+                technologies={exp.technologies}
+                id={`experience-${index}`}
+              />
+            ))
+          }
+        </CVSection>
+
+        <!-- Educación -->
+        <CVSection title={translations.es.education} id="education-section">
+          {
+            defaultData.education.map((edu, index) => (
+              <EducationItem
+                degree={edu.degree}
+                institution={edu.institution}
+                period={edu.period}
+                location={edu.location}
+                gpa={edu.gpa}
+                achievements={edu.achievements}
+                id={`education-${index}`}
+              />
+            ))
+          }
+        </CVSection>
+
+        <!-- Habilidades -->
+        <CVSection title={translations.es.skills} id="skills-section">
+          <SkillsSection categories={defaultData.skills.categories} />
+        </CVSection>
+
+        <!-- Publicaciones -->
+        <CVSection
+          title={translations.es.publications}
+          id="publications-section"
+        >
+          {
+            defaultData.publications.map((pub, index) => (
+              <PublicationItem
+                title={pub.title}
+                authors={pub.authors}
+                publication={pub.publication}
+                date={pub.date}
+                doi={pub.doi}
+                link={pub.link}
+                description={pub.description}
+                id={`publication-${index}`}
+              />
+            ))
+          }
+        </CVSection>
+
+        <!-- Competencias -->
+        <CVSection
+          title={translations.es.competitions}
+          id="competitions-section"
+        >
+          <div class="space-y-3">
+            {
+              defaultData.competitions.map((comp, index) => (
+                <div
+                  id={`competition-${index}`}
+                  class="flex justify-between items-center p-4 bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-100 rounded-lg hover:shadow-md transition-shadow"
+                >
+                  <div>
+                    <h4 class="font-semibold text-gray-900">{comp.title}</h4>
+                    <div class="text-sm text-gray-600">
+                      {comp.platform}
+                      {comp.url && (
+                        <>
+                          {" | "}
+                          <a
+                            href={comp.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-blue-600 hover:text-blue-800 underline link-text"
+                          >
+                            {translations.es.link}
+                          </a>
+                        </>
+                      )}
+                    </div>
                   </div>
-                  {/* <p class="text-xs text-gray-500 mt-1">{comp.description}</p> */}
+                  <div class="text-right">
+                    <span class="inline-block px-3 py-1 text-sm font-medium text-blue-800 bg-blue-100 rounded-full">
+                      {comp.position}
+                    </span>
+                  </div>
                 </div>
-                <div class="text-right">
-                  <span class="inline-block px-3 py-1 text-sm font-medium text-blue-800 bg-blue-100 rounded-full">
-                    {comp.position}
-                  </span>
-                </div>
-              </div>
-            ))
-          }
-        </div>
-      </CVSection>
+              ))
+            }
+          </div>
+        </CVSection>
 
-      <!-- Certificaciones -->
-      <CVSection title="Certificaciones">
-        <div class="space-y-3">
-          {
-            data.certifications.map((cert) => (
-              <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
-                <div>
-                  <h4 class="font-semibold text-gray-900">{cert.name}</h4>
-                  <p class="text-sm text-gray-600">{cert.issuer}</p>
+        <!-- Certificaciones -->
+        <CVSection
+          title={translations.es.certifications}
+          id="certifications-section"
+        >
+          <div class="space-y-3">
+            {
+              defaultData.certifications.map((cert, index) => (
+                <div
+                  id={`certification-${index}`}
+                  class="flex justify-between items-center p-3 bg-gray-50 rounded-lg"
+                >
+                  <div>
+                    <h4 class="font-semibold text-gray-900">{cert.name}</h4>
+                    <p class="text-sm text-gray-600">{cert.issuer}</p>
+                  </div>
+                  <span class="text-sm text-gray-500">{cert.year}</span>
                 </div>
-                <span class="text-sm text-gray-500">{cert.year}</span>
-              </div>
-            ))
-          }
-        </div>
-      </CVSection>
+              ))
+            }
+          </div>
+        </CVSection>
 
-      <!-- Idiomas -->
-      <CVSection title="Idiomas">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {
-            data.languages.map((lang) => (
-              <div class="text-center p-4 bg-gray-50 rounded-lg">
-                <h4 class="font-semibold text-gray-900">{lang.name}</h4>
-                <p class="text-sm text-gray-600">{lang.level}</p>
-              </div>
-            ))
-          }
-        </div>
-      </CVSection>
+        <!-- Idiomas -->
+        <CVSection title={translations.es.languages} id="languages-section">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {
+              defaultData.languages.map((lang, index) => (
+                <div
+                  id={`language-${index}`}
+                  class="text-center p-4 bg-gray-50 rounded-lg"
+                >
+                  <h4 class="font-semibold text-gray-900">{lang.name}</h4>
+                  <p class="text-sm text-gray-600">{lang.level}</p>
+                </div>
+              ))
+            }
+          </div>
+        </CVSection>
+      </div>
     </div>
   </div>
 </Layout>
+
+<script define:vars={{ cvDataEs, cvDataEn, translations }}>
+  // Function to update content based on language
+  function updateContent(language) {
+    // Get data based on language
+    const data = language === "en" ? cvDataEn : cvDataEs;
+    const trans = translations[language];
+
+    // Update page title
+    document.title = `${trans.title} - ${data.personalInfo.name}`;
+
+    // Update header information
+    const headerTitle = document.querySelector("h2");
+    if (headerTitle) {
+      headerTitle.textContent = data.personalInfo.title;
+    }
+
+    // Update section titles
+    document.querySelectorAll("section h3").forEach((heading, index) => {
+      const sectionKey = Object.keys(trans)[index + 1]; // +1 to skip 'title'
+      if (sectionKey && trans[sectionKey]) {
+        heading.textContent = trans[sectionKey];
+      }
+    });
+
+    // Update summary content
+    const summaryText = document.getElementById("summary-text");
+    if (summaryText) {
+      summaryText.textContent = data.summary;
+    }
+
+    // Update experience items
+    data.experience.forEach((exp, index) => {
+      const expItem = document.getElementById(`experience-${index}`);
+      if (expItem) {
+        const position = expItem.querySelector("h4");
+        const company = expItem.querySelector("h5");
+        const period = expItem.querySelector("span.text-gray-500");
+        const descItems = expItem.querySelectorAll("ul.list-disc li");
+
+        if (position) position.textContent = exp.position;
+        if (company) company.textContent = exp.company;
+        if (period) period.textContent = exp.period;
+
+        exp.description.forEach((desc, i) => {
+          if (descItems[i]) {
+            // Handle markdown links
+            if (desc.includes("[")) {
+              descItems[i].innerHTML = processMarkdownLinks(desc);
+            } else {
+              descItems[i].textContent = desc;
+            }
+          }
+        });
+      }
+    });
+
+    // Update education items
+    data.education.forEach((edu, index) => {
+      const eduItem = document.getElementById(`education-${index}`);
+      if (eduItem) {
+        const degree = eduItem.querySelector("h4");
+        const institution = eduItem.querySelector("h5");
+        const period = eduItem.querySelector("span.text-gray-500");
+
+        if (degree) degree.textContent = edu.degree;
+        if (institution) institution.textContent = edu.institution;
+        if (period) period.textContent = edu.period;
+      }
+    });
+
+    // Update skills section
+    // Skills are mostly language-agnostic, but titles need translation
+    const skillsCategories = document.querySelectorAll("#skills-section h4");
+    data.skills.categories.forEach((category, index) => {
+      if (skillsCategories[index]) {
+        skillsCategories[index].textContent = category.title;
+      }
+    });
+
+    // Update publications
+    data.publications.forEach((pub, index) => {
+      const pubItem = document.getElementById(`publication-${index}`);
+      if (pubItem) {
+        const title = pubItem.querySelector("h4");
+        const description = pubItem.querySelector("p.text-gray-700");
+
+        if (title) title.textContent = pub.title;
+        if (description) description.textContent = pub.description;
+      }
+    });
+
+    // Update competitions
+    data.competitions.forEach((comp, index) => {
+      const compItem = document.getElementById(`competition-${index}`);
+      if (compItem) {
+        const title = compItem.querySelector("h4");
+        const position = compItem.querySelector("span.text-blue-800");
+        const linkText = compItem.querySelector(".link-text");
+
+        if (title) title.textContent = comp.title;
+        if (position) position.textContent = comp.position;
+        if (linkText) linkText.textContent = trans.link;
+      }
+    });
+
+    // Update certifications
+    data.certifications.forEach((cert, index) => {
+      const certItem = document.getElementById(`certification-${index}`);
+      if (certItem) {
+        const name = certItem.querySelector("h4");
+        const issuer = certItem.querySelector("p");
+
+        if (name) name.textContent = cert.name;
+        if (issuer) issuer.textContent = cert.issuer;
+      }
+    });
+
+    // Update languages
+    data.languages.forEach((lang, index) => {
+      const langItem = document.getElementById(`language-${index}`);
+      if (langItem) {
+        const name = langItem.querySelector("h4");
+        const level = langItem.querySelector("p");
+
+        if (name) name.textContent = lang.name;
+        if (level) level.textContent = lang.level;
+      }
+    });
+  }
+
+  // Helper function to process markdown links
+  function processMarkdownLinks(text) {
+    return text.replace(
+      /\[([^\]]+)\]\(([^)]+)\)/g,
+      '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 underline">$1</a>'
+    );
+  }
+
+  // Listen for language change events
+  document.addEventListener("language-changed", (event) => {
+    const language = event.detail.language;
+    updateContent(language);
+  });
+
+  // Initialize with saved language
+  const savedLanguage = localStorage.getItem("cv-language") || "es";
+  if (savedLanguage === "en") {
+    updateContent("en");
+  }
+</script>
