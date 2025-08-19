@@ -1,15 +1,15 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import CVHeader from "../components/CVHeader.astro";
-import CVSection from "../components/CVSection.astro";
-import ExperienceItem from "../components/ExperienceItem.astro";
-import EducationItem from "../components/EducationItem.astro";
-import PublicationItem from "../components/PublicationItem.astro";
-import SkillsSection from "../components/SkillsSection.astro";
-import LanguageSwitcher from "../components/LanguageSwitcher.astro";
-import cvDataEs from "../data/cv-data.json";
-import cvDataEn from "../data/cv-data-en.json";
-import type { CVData } from "../types/cv-types";
+import Layout from '../layouts/Layout.astro';
+import CVHeader from '../components/CVHeader.astro';
+import CVSection from '../components/CVSection.astro';
+import ExperienceItem from '../components/ExperienceItem.astro';
+import EducationItem from '../components/EducationItem.astro';
+import PublicationItem from '../components/PublicationItem.astro';
+import SkillsSection from '../components/SkillsSection.astro';
+import LanguageSwitcher from '../components/LanguageSwitcher.astro';
+import cvDataEs from '../data/cv-data.json';
+import cvDataEn from '../data/cv-data-en.json';
+import type { CVData } from '../types/cv-types';
 
 // We'll use Spanish as the default data, but the client-side script will update it
 const defaultData: CVData = cvDataEs as unknown as CVData;
@@ -17,37 +17,37 @@ const defaultData: CVData = cvDataEs as unknown as CVData;
 // Translation mapping for section titles
 const translations = {
   es: {
-    title: "Currículum Vitae",
-    summary: "Resumen Profesional",
-    experience: "Experiencia Laboral",
-    education: "Educación",
-    skills: "Habilidades Técnicas",
-    publications: "Publicaciones",
-    competitions: "Competencias",
-    certifications: "Certificaciones",
-    languages: "Idiomas",
-    link: "Enlace",
+    title: 'Currículum Vitae',
+    summary: 'Resumen Profesional',
+    experience: 'Experiencia Laboral',
+    education: 'Educación',
+    skills: 'Habilidades Técnicas',
+    publications: 'Publicaciones',
+    competitions: 'Competencias',
+    certifications: 'Certificaciones',
+    languages: 'Idiomas',
+    link: 'Enlace',
   },
   en: {
-    title: "Resume",
-    summary: "Professional Summary",
-    experience: "Work Experience",
-    education: "Education",
-    skills: "Technical Skills",
-    publications: "Publications",
-    competitions: "Competitions",
-    certifications: "Certifications",
-    languages: "Languages",
-    link: "Link",
+    title: 'Resume',
+    summary: 'Professional Summary',
+    experience: 'Work Experience',
+    education: 'Education',
+    skills: 'Technical Skills',
+    publications: 'Publications',
+    competitions: 'Competitions',
+    certifications: 'Certifications',
+    languages: 'Languages',
+    link: 'Link',
   },
 };
 ---
 
 <Layout title={`${translations.es.title} - Pablo Neirz Vergara`}>
-  <div class="min-h-screen py-8 px-4 bg-blue-50">
-    <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-lg p-4 sm:p-8">
+  <div class="min-h-screen bg-blue-50 px-4 py-8">
+    <div class="mx-auto max-w-4xl rounded-lg bg-white p-4 shadow-lg sm:p-8">
       <!-- Language Switcher -->
-      <div class="flex justify-end mb-4">
+      <div class="mb-4 flex justify-end">
         <LanguageSwitcher />
       </div>
 
@@ -67,10 +67,7 @@ const translations = {
 
         <!-- Resumen Profesional -->
         <CVSection title={translations.es.summary} id="summary-section">
-          <p
-            class="text-gray-700 leading-relaxed text-justify"
-            id="summary-text"
-          >
+          <p class="text-justify leading-relaxed text-gray-700" id="summary-text">
             {defaultData.summary}
           </p>
         </CVSection>
@@ -115,10 +112,7 @@ const translations = {
         </CVSection>
 
         <!-- Publicaciones -->
-        <CVSection
-          title={translations.es.publications}
-          id="publications-section"
-        >
+        <CVSection title={translations.es.publications} id="publications-section">
           {
             defaultData.publications.map((pub, index) => (
               <PublicationItem
@@ -136,16 +130,13 @@ const translations = {
         </CVSection>
 
         <!-- Competencias -->
-        <CVSection
-          title={translations.es.competitions}
-          id="competitions-section"
-        >
+        <CVSection title={translations.es.competitions} id="competitions-section">
           <div class="space-y-3">
             {
               defaultData.competitions.map((comp, index) => (
                 <div
                   id={`competition-${index}`}
-                  class="flex justify-between items-center p-4 bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-100 rounded-lg hover:shadow-md transition-shadow"
+                  class="flex items-center justify-between rounded-lg border border-blue-100 bg-gradient-to-r from-blue-50 to-indigo-50 p-4 transition-shadow hover:shadow-md"
                 >
                   <div>
                     <h4 class="font-semibold text-gray-900">{comp.title}</h4>
@@ -153,12 +144,12 @@ const translations = {
                       {comp.platform}
                       {comp.url && (
                         <>
-                          {" | "}
+                          {' | '}
                           <a
                             href={comp.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            class="text-blue-600 hover:text-blue-800 underline link-text"
+                            class="link-text text-blue-600 underline hover:text-blue-800"
                           >
                             {translations.es.link}
                           </a>
@@ -167,7 +158,7 @@ const translations = {
                     </div>
                   </div>
                   <div class="text-right">
-                    <span class="inline-block px-3 py-1 text-sm font-medium text-blue-800 bg-blue-100 rounded-full">
+                    <span class="inline-block rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-blue-800">
                       {comp.position}
                     </span>
                   </div>
@@ -178,16 +169,13 @@ const translations = {
         </CVSection>
 
         <!-- Certificaciones -->
-        <CVSection
-          title={translations.es.certifications}
-          id="certifications-section"
-        >
+        <CVSection title={translations.es.certifications} id="certifications-section">
           <div class="space-y-3">
             {
               defaultData.certifications.map((cert, index) => (
                 <div
                   id={`certification-${index}`}
-                  class="flex justify-between items-center p-3 bg-gray-50 rounded-lg"
+                  class="flex items-center justify-between rounded-lg bg-gray-50 p-3"
                 >
                   <div>
                     <h4 class="font-semibold text-gray-900">{cert.name}</h4>
@@ -202,13 +190,10 @@ const translations = {
 
         <!-- Idiomas -->
         <CVSection title={translations.es.languages} id="languages-section">
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
             {
               defaultData.languages.map((lang, index) => (
-                <div
-                  id={`language-${index}`}
-                  class="text-center p-4 bg-gray-50 rounded-lg"
-                >
+                <div id={`language-${index}`} class="rounded-lg bg-gray-50 p-4 text-center">
                   <h4 class="font-semibold text-gray-900">{lang.name}</h4>
                   <p class="text-sm text-gray-600">{lang.level}</p>
                 </div>
@@ -225,20 +210,20 @@ const translations = {
   // Function to update content based on language
   function updateContent(language) {
     // Get data based on language
-    const data = language === "en" ? cvDataEn : cvDataEs;
+    const data = language === 'en' ? cvDataEn : cvDataEs;
     const trans = translations[language];
 
     // Update page title
     document.title = `${trans.title} - ${data.personalInfo.name}`;
 
     // Update header information
-    const headerTitle = document.querySelector("h2");
+    const headerTitle = document.querySelector('h2');
     if (headerTitle) {
       headerTitle.textContent = data.personalInfo.title;
     }
 
     // Update section titles
-    document.querySelectorAll("section h3").forEach((heading, index) => {
+    document.querySelectorAll('section h3').forEach((heading, index) => {
       const sectionKey = Object.keys(trans)[index + 1]; // +1 to skip 'title'
       if (sectionKey && trans[sectionKey]) {
         heading.textContent = trans[sectionKey];
@@ -246,7 +231,7 @@ const translations = {
     });
 
     // Update summary content
-    const summaryText = document.getElementById("summary-text");
+    const summaryText = document.getElementById('summary-text');
     if (summaryText) {
       summaryText.textContent = data.summary;
     }
@@ -255,10 +240,10 @@ const translations = {
     data.experience.forEach((exp, index) => {
       const expItem = document.getElementById(`experience-${index}`);
       if (expItem) {
-        const position = expItem.querySelector("h4");
-        const company = expItem.querySelector("h5");
-        const period = expItem.querySelector("span.text-gray-500");
-        const descItems = expItem.querySelectorAll("ul.list-disc li");
+        const position = expItem.querySelector('h4');
+        const company = expItem.querySelector('h5');
+        const period = expItem.querySelector('span.text-gray-500');
+        const descItems = expItem.querySelectorAll('ul.list-disc li');
 
         if (position) position.textContent = exp.position;
         if (company) company.textContent = exp.company;
@@ -267,7 +252,7 @@ const translations = {
         exp.description.forEach((desc, i) => {
           if (descItems[i]) {
             // Handle markdown links
-            if (desc.includes("[")) {
+            if (desc.includes('[')) {
               descItems[i].innerHTML = processMarkdownLinks(desc);
             } else {
               descItems[i].textContent = desc;
@@ -281,9 +266,9 @@ const translations = {
     data.education.forEach((edu, index) => {
       const eduItem = document.getElementById(`education-${index}`);
       if (eduItem) {
-        const degree = eduItem.querySelector("h4");
-        const institution = eduItem.querySelector("h5");
-        const period = eduItem.querySelector("span.text-gray-500");
+        const degree = eduItem.querySelector('h4');
+        const institution = eduItem.querySelector('h5');
+        const period = eduItem.querySelector('span.text-gray-500');
 
         if (degree) degree.textContent = edu.degree;
         if (institution) institution.textContent = edu.institution;
@@ -293,7 +278,7 @@ const translations = {
 
     // Update skills section
     // Skills are mostly language-agnostic, but titles need translation
-    const skillsCategories = document.querySelectorAll("#skills-section h4");
+    const skillsCategories = document.querySelectorAll('#skills-section h4');
     data.skills.categories.forEach((category, index) => {
       if (skillsCategories[index]) {
         skillsCategories[index].textContent = category.title;
@@ -304,8 +289,8 @@ const translations = {
     data.publications.forEach((pub, index) => {
       const pubItem = document.getElementById(`publication-${index}`);
       if (pubItem) {
-        const title = pubItem.querySelector("h4");
-        const description = pubItem.querySelector("p.text-gray-700");
+        const title = pubItem.querySelector('h4');
+        const description = pubItem.querySelector('p.text-gray-700');
 
         if (title) title.textContent = pub.title;
         if (description) description.textContent = pub.description;
@@ -316,9 +301,9 @@ const translations = {
     data.competitions.forEach((comp, index) => {
       const compItem = document.getElementById(`competition-${index}`);
       if (compItem) {
-        const title = compItem.querySelector("h4");
-        const position = compItem.querySelector("span.text-blue-800");
-        const linkText = compItem.querySelector(".link-text");
+        const title = compItem.querySelector('h4');
+        const position = compItem.querySelector('span.text-blue-800');
+        const linkText = compItem.querySelector('.link-text');
 
         if (title) title.textContent = comp.title;
         if (position) position.textContent = comp.position;
@@ -330,8 +315,8 @@ const translations = {
     data.certifications.forEach((cert, index) => {
       const certItem = document.getElementById(`certification-${index}`);
       if (certItem) {
-        const name = certItem.querySelector("h4");
-        const issuer = certItem.querySelector("p");
+        const name = certItem.querySelector('h4');
+        const issuer = certItem.querySelector('p');
 
         if (name) name.textContent = cert.name;
         if (issuer) issuer.textContent = cert.issuer;
@@ -342,8 +327,8 @@ const translations = {
     data.languages.forEach((lang, index) => {
       const langItem = document.getElementById(`language-${index}`);
       if (langItem) {
-        const name = langItem.querySelector("h4");
-        const level = langItem.querySelector("p");
+        const name = langItem.querySelector('h4');
+        const level = langItem.querySelector('p');
 
         if (name) name.textContent = lang.name;
         if (level) level.textContent = lang.level;
@@ -355,19 +340,19 @@ const translations = {
   function processMarkdownLinks(text) {
     return text.replace(
       /\[([^\]]+)\]\(([^)]+)\)/g,
-      '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 underline">$1</a>'
+      '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 underline">$1</a>',
     );
   }
 
   // Listen for language change events
-  document.addEventListener("language-changed", (event) => {
+  document.addEventListener('language-changed', (event) => {
     const language = event.detail.language;
     updateContent(language);
   });
 
   // Initialize with saved language
-  const savedLanguage = localStorage.getItem("cv-language") || "es";
-  if (savedLanguage === "en") {
-    updateContent("en");
+  const savedLanguage = localStorage.getItem('cv-language') || 'es';
+  if (savedLanguage === 'en') {
+    updateContent('en');
   }
 </script>

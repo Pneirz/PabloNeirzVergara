@@ -10,8 +10,7 @@ export interface Props {
   id?: string;
 }
 
-const { title, authors, publication, date, doi, link, description, id } =
-  Astro.props;
+const { title, authors, publication, date, doi, link, description, id } = Astro.props;
 ---
 
 <ol
@@ -21,22 +20,16 @@ const { title, authors, publication, date, doi, link, description, id } =
     <span class="size-3 shrink-0 rounded-full bg-blue-600"></span>
     <div class="flex-grow">
       <div class="mb-2">
-        <h4 class="text-lg font-semibold text-gray-900 mb-1">{title}</h4>
-        <p class="text-sm text-gray-600 mb-1">
+        <h4 class="mb-1 text-lg font-semibold text-gray-900">{title}</h4>
+        <p class="mb-1 text-sm text-gray-600">
           <span class="font-medium">Autores:</span>
-          {authors.join(", ")}
+          {authors.join(', ')}
         </p>
-        <p class="text-sm text-purple-600 font-medium mb-1">{publication}</p>
+        <p class="mb-1 text-sm font-medium text-purple-600">{publication}</p>
         <p class="text-sm text-gray-500">{date}</p>
       </div>
 
-      {
-        description && (
-          <p class="text-sm text-gray-700 mb-2 leading-relaxed">
-            {description}
-          </p>
-        )
-      }
+      {description && <p class="mb-2 text-sm leading-relaxed text-gray-700">{description}</p>}
 
       <div class="flex gap-3 text-sm">
         {
@@ -45,7 +38,7 @@ const { title, authors, publication, date, doi, link, description, id } =
               href={`https://doi.org/${doi}`}
               target="_blank"
               rel="noopener noreferrer"
-              class="text-blue-600 hover:text-blue-800 transition-colors"
+              class="text-blue-600 transition-colors hover:text-blue-800"
             >
               DOI: {doi}
             </a>
@@ -57,7 +50,7 @@ const { title, authors, publication, date, doi, link, description, id } =
               href={link}
               target="_blank"
               rel="noopener noreferrer"
-              class="text-blue-600 hover:text-blue-800 transition-colors publication-link"
+              class="publication-link text-blue-600 transition-colors hover:text-blue-800"
             >
               Ver publicación
             </a>

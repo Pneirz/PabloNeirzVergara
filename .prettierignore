@@ -1,0 +1,8 @@
+# Ignorar archivos de build y dependencias
+node_modules
+.dist
+.build
+dist
+build
+coverage
+*.log

@@ -11,41 +11,28 @@ export interface Props {
   diplomas?: string;
 }
 
-const {
-  name,
-  title,
-  email,
-  phone,
-  location,
-  linkedin,
-  github,
-  website,
-  diplomas,
-} = Astro.props;
+const { name, title, email, phone, location, linkedin, github, website, diplomas } = Astro.props;
 
 // Import CV PDFs (Spanish default)
-import cvEs from "../assets/Pablo Neirz Vergara_CV_ESP.pdf";
-import cvEn from "../assets/Pablo Neirz Vergara_CV_ENG.pdf";
+import cvEs from '../assets/Pablo Neirz Vergara_CV_ESP.pdf';
+import cvEn from '../assets/Pablo Neirz Vergara_CV_ENG.pdf';
 ---
 
-<header class="text-center mb-8" style="padding: 2rem; border-radius: 0.5rem;">
-  <h1 class="text-4xl font-bold text-gray-900 mb-2">{name}</h1>
-  <h2 class="text-xl text-gray-600 mb-4">{title}</h2>
+<header class="mb-8 text-center" style="padding: 2rem; border-radius: 0.5rem;">
+  <h1 class="mb-2 text-4xl font-bold text-gray-900">{name}</h1>
+  <h2 class="mb-4 text-xl text-gray-600">{title}</h2>
 
   <div class="flex flex-wrap justify-center gap-4 text-sm text-gray-600">
     <div class="flex items-center gap-1">
-      <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-        <path
-          d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"
-        ></path>
-        <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"
-        ></path>
+      <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+        <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+        <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
       </svg>
       <span>{email}</span>
     </div>
 
     <div class="flex items-center gap-1">
-      <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+      <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
         <path
           d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"
         ></path>
@@ -56,7 +43,7 @@ import cvEn from "../assets/Pablo Neirz Vergara_CV_ENG.pdf";
     {
       location && (
         <div class="flex items-center gap-1">
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+          <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
             <path
               fill-rule="evenodd"
               d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
@@ -69,54 +56,62 @@ import cvEn from "../assets/Pablo Neirz Vergara_CV_ENG.pdf";
     }
   </div>
 
-  <div class="flex justify-center gap-4 mt-4">
-    {linkedin && (
-      <a
-        href={linkedin}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="text-blue-600 hover:text-blue-800 transition-colors text-sm"
-      >
-        LinkedIn
-      </a>
-    )}
-    {github && (
-      <a
-        href={github}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="text-gray-700 hover:text-gray-900 transition-colors text-sm"
-      >
-        GitHub
-      </a>
-    )}
-    {website && (
-      <a
-        href={website}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="text-green-600 hover:text-green-800 transition-colors text-sm"
-      >
-        Website
-      </a>
-    )}
-    {diplomas && (
-      <a
-        href={diplomas}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="text-purple-600 hover:text-purple-800 transition-colors text-sm"
-      >
-        Diplomas
-      </a>
-    )}
+  <div class="mt-4 flex justify-center gap-4">
+    {
+      linkedin && (
+        <a
+          href={linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-sm text-blue-600 transition-colors hover:text-blue-800"
+        >
+          LinkedIn
+        </a>
+      )
+    }
+    {
+      github && (
+        <a
+          href={github}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-sm text-gray-700 transition-colors hover:text-gray-900"
+        >
+          GitHub
+        </a>
+      )
+    }
+    {
+      website && (
+        <a
+          href={website}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-sm text-green-600 transition-colors hover:text-green-800"
+        >
+          Website
+        </a>
+      )
+    }
+    {
+      diplomas && (
+        <a
+          href={diplomas}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-sm text-purple-600 transition-colors hover:text-purple-800"
+        >
+          Diplomas
+        </a>
+      )
+    }
     <a
       id="cv-download-link"
       href={cvEs}
       download="PabloNeirzVergara_CV_ES.pdf"
-      class="text-red-600 hover:text-red-800 transition-colors text-sm"
+      class="text-sm text-red-600 transition-colors hover:text-red-800"
     >
-  Currículum (PDF)
+      Currículum (PDF)
     </a>
   </div>
 </header>
@@ -124,25 +119,25 @@ import cvEn from "../assets/Pablo Neirz Vergara_CV_ENG.pdf";
 <script define:vars={{ cvEs, cvEn }}>
   // Update the CV download link based on selected language
   function updateCvLink(lang) {
-    const link = document.getElementById("cv-download-link");
+    const link = document.getElementById('cv-download-link');
     if (!link) return;
-    if (lang === "en") {
-  link.textContent = "Resume (PDF)";
-      link.setAttribute("href", cvEn);
-      link.setAttribute("download", "PabloNeirzVergara_CV_EN.pdf");
+    if (lang === 'en') {
+      link.textContent = 'Resume (PDF)';
+      link.setAttribute('href', cvEn);
+      link.setAttribute('download', 'PabloNeirzVergara_CV_EN.pdf');
     } else {
-  link.textContent = "Currículum (PDF)";
-      link.setAttribute("href", cvEs);
-      link.setAttribute("download", "PabloNeirzVergara_CV_ES.pdf");
+      link.textContent = 'Currículum (PDF)';
+      link.setAttribute('href', cvEs);
+      link.setAttribute('download', 'PabloNeirzVergara_CV_ES.pdf');
     }
   }
 
   // Listen to language change events
-  document.addEventListener("language-changed", (e) => {
+  document.addEventListener('language-changed', (e) => {
     updateCvLink(e.detail.language);
   });
 
   // Initialize on load
-  const savedLanguage = localStorage.getItem("cv-language") || "es";
+  const savedLanguage = localStorage.getItem('cv-language') || 'es';
   updateCvLink(savedLanguage);
 </script>
