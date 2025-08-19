@@ -20,10 +20,8 @@ function processMarkdownLinks(text: string): string {
 }
 ---
 
-<ol
-  class="relative space-y-8 before:absolute before:-ml-px before:h-full before:w-0.5 before:rounded-full before:bg-gray-200"
->
-  <li id={id} class="relative -ms-1.5 flex items-start gap-4">
+<ol class="timeline">
+  <li id={id} class="timeline-item">
     <span class="size-3 shrink-0 rounded-full bg-blue-600"></span>
     <div class="flex-grow">
       <div class="mb-2 flex flex-col md:flex-row md:items-start md:justify-between">
@@ -35,7 +33,7 @@ function processMarkdownLinks(text: string): string {
         <span class="text-sm font-medium text-gray-500 md:text-right">{period}</span>
       </div>
 
-      <ul class="mb-3 list-inside list-disc space-y-1 text-gray-700">
+  <ul class="mb-3 list-inside list-disc space-y-1 text-gray-700">
         {
           description.map((item) => (
             <li class="text-sm leading-relaxed" set:html={processMarkdownLinks(item)} />
@@ -47,7 +45,7 @@ function processMarkdownLinks(text: string): string {
         technologies && technologies.length > 0 && (
           <div class="flex flex-wrap gap-2">
             {technologies.map((tech) => (
-              <span class="rounded-full bg-gray-100 px-2 py-1 text-xs text-gray-700">{tech}</span>
+              <span class="pill">{tech}</span>
             ))}
           </div>
         )

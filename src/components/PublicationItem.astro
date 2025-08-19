@@ -13,10 +13,8 @@ export interface Props {
 const { title, authors, publication, date, doi, link, description, id } = Astro.props;
 ---
 
-<ol
-  class="relative space-y-8 before:absolute before:-ml-px before:h-full before:w-0.5 before:rounded-full before:bg-gray-200"
->
-  <li id={id} class="relative -ms-1.5 flex items-start gap-4">
+<ol class="timeline">
+  <li id={id} class="timeline-item">
     <span class="size-3 shrink-0 rounded-full bg-blue-600"></span>
     <div class="flex-grow">
       <div class="mb-2">
@@ -31,14 +29,14 @@ const { title, authors, publication, date, doi, link, description, id } = Astro.
 
       {description && <p class="mb-2 text-sm leading-relaxed text-gray-700">{description}</p>}
 
-      <div class="flex gap-3 text-sm">
+  <div class="flex gap-3 text-sm">
         {
           doi && (
             <a
               href={`https://doi.org/${doi}`}
               target="_blank"
               rel="noopener noreferrer"
-              class="text-blue-600 transition-colors hover:text-blue-800"
+              class="link-primary"
             >
               DOI: {doi}
             </a>
@@ -50,7 +48,7 @@ const { title, authors, publication, date, doi, link, description, id } = Astro.
               href={link}
               target="_blank"
               rel="noopener noreferrer"
-              class="publication-link text-blue-600 transition-colors hover:text-blue-800"
+              class="publication-link link-primary"
             >
               Ver publicación
             </a>

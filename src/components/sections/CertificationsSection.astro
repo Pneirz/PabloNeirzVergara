@@ -15,7 +15,7 @@ const { title, items } = Astro.props;
     {items.map((cert, index) => (
       <div
         id={`certification-${index}`}
-        class="flex items-center justify-between rounded-lg bg-gray-50 p-3"
+        class="flex items-center justify-between card"
       >
         <div>
           <h4 class="font-semibold text-gray-900">{cert.name}</h4>
