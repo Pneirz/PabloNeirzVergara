@@ -1,0 +1,14 @@
+---
+import CVSection from '../../components/CVSection.astro';
+
+interface Props {
+  title: string;
+  summary: string;
+}
+
+const { title, summary } = Astro.props;
+---
+
+<CVSection title={title} id="summary-section">
+  <p class="text-justify leading-relaxed text-gray-700" id="summary-text">{summary}</p>
+</CVSection>

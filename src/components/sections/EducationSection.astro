@@ -1,0 +1,24 @@
+---
+import CVSection from '../../components/CVSection.astro';
+import EducationItem from '../../components/EducationItem.astro';
+import type { Education } from '../../types/cv-types';
+
+interface Props {
+  title: string;
+  items: Education[];
+}
+
+const { title, items } = Astro.props;
+---
+
+<CVSection title={title} id="education-section">
+  {items.map((edu, index) => (
+    <EducationItem
+      degree={edu.degree}
+      institution={edu.institution}
+      period={edu.period}
+      location={edu.location}
+      id={`education-${index}`}
+    />
+  ))}
+</CVSection>

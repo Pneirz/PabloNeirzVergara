@@ -1,0 +1,22 @@
+---
+import CVSection from '../../components/CVSection.astro';
+import type { Language } from '../../types/cv-types';
+
+interface Props {
+  title: string;
+  items: Language[];
+}
+
+const { title, items } = Astro.props;
+---
+
+<CVSection title={title} id="languages-section">
+  <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
+    {items.map((lang, index) => (
+      <div id={`language-${index}`} class="rounded-lg bg-gray-50 p-4 text-center">
+        <h4 class="font-semibold text-gray-900">{lang.name}</h4>
+        <p class="text-sm text-gray-600">{lang.level}</p>
+      </div>
+    ))}
+  </div>
+</CVSection>

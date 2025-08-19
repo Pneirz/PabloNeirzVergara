@@ -1,0 +1,16 @@
+---
+import CVSection from '../../components/CVSection.astro';
+import SkillsSection from '../../components/SkillsSection.astro';
+import type { SkillCategory } from '../../types/cv-types';
+
+interface Props {
+  title: string;
+  categories: SkillCategory[];
+}
+
+const { title, categories } = Astro.props;
+---
+
+<CVSection title={title} id="skills-section">
+  <SkillsSection categories={categories} />
+</CVSection>
