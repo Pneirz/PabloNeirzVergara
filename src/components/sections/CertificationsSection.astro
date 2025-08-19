@@ -12,17 +12,16 @@ const { title, items } = Astro.props;
 
 <CVSection title={title} id="certifications-section">
   <div class="space-y-3">
-    {items.map((cert, index) => (
-      <div
-        id={`certification-${index}`}
-        class="flex items-center justify-between card"
-      >
-        <div>
-          <h4 class="font-semibold text-gray-900">{cert.name}</h4>
-          <p class="text-sm text-gray-600">{cert.issuer}</p>
+    {
+      items.map((cert, index) => (
+        <div id={`certification-${index}`} class="card flex items-center justify-between">
+          <div>
+            <h4 class="font-semibold text-gray-900">{cert.name}</h4>
+            <p class="text-sm text-gray-600">{cert.issuer}</p>
+          </div>
+          <span class="text-sm text-gray-500">{cert.year}</span>
         </div>
-        <span class="text-sm text-gray-500">{cert.year}</span>
-      </div>
-    ))}
+      ))
+    }
   </div>
 </CVSection>

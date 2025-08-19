@@ -20,16 +20,21 @@ const { title, authors, publication, date, doi, link, description, id } = Astro.
       <div class="mb-2">
         <h4 class="mb-1 text-lg font-semibold text-gray-900">{title}</h4>
         <p class="mb-1 text-sm text-gray-600">
-          <span class="font-medium">Autores:</span>
+          <span
+            class="font-medium"
+            data-i18n="authors-label"
+            data-i18n-es="Autores:"
+            data-i18n-en="Authors:">Autores:</span
+          >
           {authors.join(', ')}
         </p>
-        <p class="mb-1 text-sm font-medium text-purple-600">{publication}</p>
+        <p class="mb-1 text-sm font-medium text-blue-600">{publication}</p>
         <p class="text-sm text-gray-500">{date}</p>
       </div>
 
       {description && <p class="mb-2 text-sm leading-relaxed text-gray-700">{description}</p>}
 
-  <div class="flex gap-3 text-sm">
+      <div class="flex gap-3 text-sm">
         {
           doi && (
             <a
@@ -49,6 +54,9 @@ const { title, authors, publication, date, doi, link, description, id } = Astro.
               target="_blank"
               rel="noopener noreferrer"
               class="publication-link link-primary"
+              data-i18n="publication-link"
+              data-i18n-es="Ver publicación"
+              data-i18n-en="View publication"
             >
               Ver publicación
             </a>

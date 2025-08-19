@@ -33,7 +33,7 @@ function processMarkdownLinks(text: string): string {
         <span class="text-sm font-medium text-gray-500 md:text-right">{period}</span>
       </div>
 
-  <ul class="mb-3 list-inside list-disc space-y-1 text-gray-700">
+      <ul class="mb-3 list-inside list-disc space-y-1 text-gray-700">
         {
           description.map((item) => (
             <li class="text-sm leading-relaxed" set:html={processMarkdownLinks(item)} />

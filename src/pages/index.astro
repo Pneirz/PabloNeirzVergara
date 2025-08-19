@@ -84,7 +84,10 @@ const translations = {
         />
 
         <!-- Publicaciones -->
-        <PublicationsSection title={translations.es.publications} items={defaultData.publications} />
+        <PublicationsSection
+          title={translations.es.publications}
+          items={defaultData.publications}
+        />
 
         <!-- Competencias -->
         <CompetitionsSection
@@ -94,7 +97,10 @@ const translations = {
         />
 
         <!-- Certificaciones -->
-        <CertificationsSection title={translations.es.certifications} items={defaultData.certifications} />
+        <CertificationsSection
+          title={translations.es.certifications}
+          items={defaultData.certifications}
+        />
 
         <!-- Idiomas -->
         <LanguagesSection title={translations.es.languages} items={defaultData.languages} />
@@ -188,9 +194,21 @@ const translations = {
       if (pubItem) {
         const title = pubItem.querySelector('h4');
         const description = pubItem.querySelector('p.text-gray-700');
+        const authorsLabel = pubItem.querySelector('[data-i18n="authors-label"]');
+        const publicationLink = pubItem.querySelector('[data-i18n="publication-link"]');
 
         if (title) title.textContent = pub.title;
         if (description) description.textContent = pub.description;
+        if (authorsLabel)
+          authorsLabel.textContent =
+            language === 'en'
+              ? authorsLabel.getAttribute('data-i18n-en')
+              : authorsLabel.getAttribute('data-i18n-es');
+        if (publicationLink)
+          publicationLink.textContent =
+            language === 'en'
+              ? publicationLink.getAttribute('data-i18n-en')
+              : publicationLink.getAttribute('data-i18n-es');
       }
     });
 
