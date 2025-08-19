@@ -238,7 +238,7 @@
   "publications": [
     {
       "title": "Attribute Relevance Score: A Novel Measure for Identifying Attribute Importance",
-      "authors": ["Pablo Neirz Vergara"],
+      "authors": ["Pablo Neirz Vergara", "Hector Allende", "Carolina Saavedra"],
       "publication": "MDPI, Algorithms",
       "date": "2024",
       "doi": "10.3390/a17110518",
@@ -246,7 +246,7 @@
     },
     {
       "title": "Prediction of Concrete Compressive Strength using Artificial Neural Networks",
-      "authors": ["Pablo Neirz Vergara"],
+      "authors": ["Pablo Neirz Vergara", "Leonardo Bennun", "Mauricio Pradena", "Jaime Gómez"],
       "publication": "Gradjevinar",
       "date": "2020",
       "doi": "10.14256/JCE.2438.2018",
