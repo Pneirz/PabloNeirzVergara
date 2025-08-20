@@ -1,0 +1,62 @@
+---
+export interface Props {
+  title: string;
+  authors: string[];
+  publication: string;
+  date: string;
+  doi?: string;
+  link?: string;
+  description?: string;
+  id?: string;
+}
+
+const { title, authors, publication, date, doi, link, description, id } = Astro.props;
+---
+
+<ol
+  class="relative space-y-8 before:absolute before:-ml-px before:h-full before:w-0.5 before:rounded-full before:bg-gray-200"
+>
+  <li id={id} class="relative -ms-1.5 flex items-start gap-4">
+    <span class="size-3 shrink-0 rounded-full bg-blue-600"></span>
+    <div class="flex-grow">
+      <div class="mb-2">
+        <h4 class="mb-1 text-lg font-semibold text-gray-900">{title}</h4>
+        <p class="mb-1 text-sm text-gray-600">
+          <span class="font-medium">Autores:</span>
+          {authors.join(', ')}
+        </p>
+        <p class="mb-1 text-sm font-medium text-purple-600">{publication}</p>
+        <p class="text-sm text-gray-500">{date}</p>
+      </div>
+
+      {description && <p class="mb-2 text-sm leading-relaxed text-gray-700">{description}</p>}
+
+      <div class="flex gap-3 text-sm">
+        {
+          doi && (
+            <a
+              href={`https://doi.org/${doi}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-blue-600 transition-colors hover:text-blue-800"
+            >
+              DOI: {doi}
+            </a>
+          )
+        }
+        {
+          link && (
+            <a
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="publication-link text-blue-600 transition-colors hover:text-blue-800"
+            >
+              Ver publicación
+            </a>
+          )
+        }
+      </div>
+    </div>
+  </li>
+</ol>

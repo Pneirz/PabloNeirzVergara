@@ -1,0 +1,57 @@
+---
+export interface Props {
+  position: string;
+  company: string;
+  period: string;
+  location?: string;
+  description: string[];
+  technologies?: string[];
+  id?: string;
+}
+
+const { position, company, period, location, description, technologies, id } = Astro.props;
+
+// Function to convert markdown links to HTML
+function processMarkdownLinks(text: string): string {
+  return text.replace(
+    /\[([^\]]+)\]\(([^)]+)\)/g,
+    '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 underline">$1</a>',
+  );
+}
+---
+
+<ol
+  class="relative space-y-8 before:absolute before:-ml-px before:h-full before:w-0.5 before:rounded-full before:bg-gray-200"
+>
+  <li id={id} class="relative -ms-1.5 flex items-start gap-4">
+    <span class="size-3 shrink-0 rounded-full bg-blue-600"></span>
+    <div class="flex-grow">
+      <div class="mb-2 flex flex-col md:flex-row md:items-start md:justify-between">
+        <div>
+          <h4 class="text-lg font-semibold text-gray-900">{position}</h4>
+          <h5 class="text-md font-medium text-blue-600">{company}</h5>
+          {location && <p class="text-sm text-gray-500">{location}</p>}
+        </div>
+        <span class="text-sm font-medium text-gray-500 md:text-right">{period}</span>
+      </div>
+
+      <ul class="mb-3 list-inside list-disc space-y-1 text-gray-700">
+        {
+          description.map((item) => (
+            <li class="text-sm leading-relaxed" set:html={processMarkdownLinks(item)} />
+          ))
+        }
+      </ul>
+
+      {
+        technologies && technologies.length > 0 && (
+          <div class="flex flex-wrap gap-2">
+            {technologies.map((tech) => (
+              <span class="rounded-full bg-gray-100 px-2 py-1 text-xs text-gray-700">{tech}</span>
+            ))}
+          </div>
+        )
+      }
+    </div>
+  </li>
+</ol>

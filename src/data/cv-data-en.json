@@ -1,0 +1,372 @@
+{
+  "personalInfo": {
+    "name": "Pablo Neirz Vergara",
+    "title": "Senior Data Science Engineer",
+    "email": "pablo.neirz.vergara@gmail.com",
+    "phone": "+56 9 5635 4886",
+    "linkedin": "https://www.linkedin.com/in/pablo-neirz-vergara-68b509159",
+    "diplomas": "https://drive.google.com/drive/u/0/folders/1r_Hxq1IH4wD5-vAFJQkEFFLH6l9QZ-5G"
+  },
+  "language": "en",
+  "summary": "Senior data scientist with over 8 years of experience in Python, machine learning, natural language processing (NLP), computer vision, and big data analytics. Specialized in optimizing e-commerce operations and forecasting with state-of-the-art models such as TFT, NHITS, NBEATS, and LightGBM, consistently achieving forecast accuracies above 90%. Expert in translating complex insights for cross-functional teams, with publications in high-impact journals, 2nd place worldwide in datasource.ai (2020), keynote speaker at events like FLISOL, and interviewed on ProinChile podcast on Spotify. Strong background in NLP techniques, including semantic distances between concepts (e.g., embeddings and conceptual similarity), prompt engineering with rules and MCP, pattern detection, and computer vision (e.g., image segmentation, OCR, object detection)",
+  "experience": [
+    {
+      "position": "Senior Data Science Engineer",
+      "company": "MercadoLibre",
+      "period": "December 2023 - Present",
+      "location": "Santiago, Chile",
+      "description": [
+        "Developed advanced machine learning models to optimize e-commerce operations, improving inventory and sales forecasting accuracy using state-of-the-art models like TFT, NHITS, NBEATS, and LightGBM",
+        "Collaborated with international teams to define priority air cargo strategies and develop priority models, achieving forecast accuracies consistently above 90%, increasing logistics efficiency by 20%",
+        "Developed and implemented a machine learning ensemble model for time series, adopted by multiple teams, that outperformed Meta's Prophet model by up to 10 percentage points in forecast accuracy, significantly improving data-driven decision making"
+      ],
+      "technologies": [
+        "Python",
+        "TensorFlow",
+        "LightGBM",
+        "Prophet",
+        "Machine Learning",
+        "Time Series"
+      ]
+    },
+    {
+      "position": "Senior Data Scientist",
+      "company": "Tottus",
+      "period": "April 2022 - December 2023",
+      "location": "Santiago, Chile",
+      "description": [
+        "Led the development of predictive models for national and imported product sales, improving accuracy in promotions, coupons, and store distribution, with errors below 5% MAPE",
+        "Directed the Catman forecasting team, delivering analytical solutions that optimized product placement and sales strategies in new sales centers in Peru",
+        "Presented actionable insights to stakeholders, connecting technical and business teams"
+      ],
+      "technologies": [
+        "Python",
+        "Machine Learning",
+        "Forecasting",
+        "Analytics",
+        "MAPE",
+        "Retail Analytics"
+      ]
+    },
+    {
+      "position": "Senior Data Scientist (Consultant for SAS)",
+      "company": "Sooft Technology",
+      "period": "March 2022 - May 2022",
+      "location": "Santiago, Chile",
+      "description": [
+        "Monitored and validated credit risk models, preparing detailed performance reports",
+        "Developed customer prospecting models, improving acquisition strategies"
+      ],
+      "technologies": ["SAS", "Credit Risk Models", "Customer Acquisition", "Model Validation"]
+    },
+    {
+      "position": "Data Scientist",
+      "company": "Capitaria",
+      "period": "November 2020 - March 2022",
+      "location": "Santiago, Chile",
+      "description": [
+        "Built a qualitative model to analyze company operations, identifying growth opportunities and creating KPIs to monitor executive performance",
+        "Led research on customer behavior, delivering hyper-personalized dashboards that reduced customer churn by 30% and increased profitability",
+        "Wrote two articles for the company's official blog, explaining key findings in an accessible manner. [Link.](https://blog.capitaria.com/como-perder-en-el-trading)"
+      ],
+      "technologies": ["Python", "Customer Analytics", "KPIs", "Dashboards", "Churn Reduction"]
+    },
+    {
+      "position": "Data Scientist",
+      "company": "Ministry of Transportation and Telecommunications, Chile",
+      "period": "November 2020 - March 2022",
+      "location": "Santiago, Chile",
+      "description": [
+        "Led the technical counterpart in public tenders, including the 'Foreign Trade Logistics Barometer 2020' project. [Link.](https://www.observatoriologistico.cl/estudios/estudio-actualizacion-y-aplicacion-del-barometro-de-la-logistica-de-comercio-exterior-2020?id=5db6eecd5f5d64004bf74e59)",
+        "Developed port cargo prediction models with a mean squared error below 1%, delivered directly to the Transportation Undersecretariat"
+      ],
+      "technologies": [
+        "Python",
+        "Predictive Modeling",
+        "Public Sector",
+        "Logistics Analytics",
+        "MSE"
+      ]
+    },
+    {
+      "position": "Data Scientist",
+      "company": "AVLA",
+      "period": "March 2019 - July 2020",
+      "location": "Santiago, Chile",
+      "description": [
+        "Temporarily led the analytics area for Chile and Peru, reorganizing teams after COVID impact using agile methodologies",
+        "Developed scrapers for public market data and used transparency law data to create a tender alert system, achieving a competitive advantage of several months",
+        "Developed OCR to break captchas",
+        "Developed NLP models to detect patterns in public markets"
+      ],
+      "technologies": [
+        "Python",
+        "Web Scraping",
+        "OCR",
+        "NLP",
+        "Pattern Detection",
+        "Agile Methodologies"
+      ]
+    },
+    {
+      "position": "Researcher",
+      "company": "Medical Image Analysis, UDEC",
+      "period": "March 2018 - December 2019",
+      "location": "Concepción, Chile",
+      "description": [
+        "Brain Connectivity Analysis through combined use of functional Magnetic Resonance Imaging and Tractography (FONDECYT ACT 1161427)",
+        "Development of Ant Colony Algorithm for Image Edge Detection, used for artifact segmentation in brain magnetic resonance imaging"
+      ],
+      "technologies": [
+        "Medical Imaging",
+        "fMRI",
+        "Tractography",
+        "Ant Colony Algorithm",
+        "Edge Detection"
+      ]
+    },
+    {
+      "position": "Research Assistant",
+      "company": "Applied Physics Laboratory, UDEC",
+      "period": "March 2015 - March 2016",
+      "location": "Concepción, Chile",
+      "description": [
+        "Developed predictive models for concrete compressive strength using multilayer perceptrons optimized with grid search",
+        "Analyzed heavy metals in drinking water using X-ray fluorescence techniques"
+      ],
+      "technologies": [
+        "Neural Networks",
+        "Grid Search",
+        "Concrete Analysis",
+        "X-ray Fluorescence",
+        "Water Quality"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "PhD in Computer Engineering (In Progress)",
+      "institution": "Universidad Técnica Federico Santa María",
+      "period": "2022 - Present",
+      "location": "Chile"
+    },
+    {
+      "degree": "Master's in Neuroscience",
+      "institution": "Universidad de Oviedo / Autónoma de Chile",
+      "period": "2020 - 2022",
+      "location": "Spain / Chile"
+    },
+    {
+      "degree": "Master's in Management and Executive Development",
+      "institution": "Universidad de Nebrija",
+      "period": "2020 - 2021",
+      "location": "Spain"
+    },
+    {
+      "degree": "Master's in Big Data",
+      "institution": "Cerem Global Business School",
+      "period": "2018 - 2020",
+      "location": "Spain"
+    },
+    {
+      "degree": "Bachelor's Degree in Physical Sciences",
+      "institution": "Universidad de Concepción",
+      "period": "2011 - 2017",
+      "location": "Chile"
+    }
+  ],
+  "skills": {
+    "categories": [
+      {
+        "title": "Programming Languages",
+        "skills": ["Python", "SQL", "HTML"],
+        "color": "blue"
+      },
+      {
+        "title": "Python Libraries",
+        "skills": [
+          "NumPy",
+          "Pandas",
+          "Polars",
+          "Dask",
+          "Ibis",
+          "Scikit-learn",
+          "MLforecast",
+          "Sktime",
+          "GPlearn",
+          "TensorFlow",
+          "LightGBM",
+          "XGBoost",
+          "CatBoost"
+        ],
+        "color": "green"
+      },
+      {
+        "title": "Visualization and Analysis",
+        "skills": ["Plotly", "TA-Lib", "Seaborn", "Matplotlib", "Optuna"],
+        "color": "purple"
+      },
+      {
+        "title": "Cloud and Databases",
+        "skills": ["GCP", "BigQuery", "SQL"],
+        "color": "orange"
+      },
+      {
+        "title": "Tools and Platforms",
+        "skills": ["Figma", "Jira", "Cursor", "Jupyter Labs"],
+        "color": "red"
+      },
+      {
+        "title": "Specialization Domains",
+        "skills": [
+          "Machine Learning",
+          "Deep Learning",
+          "Big Data",
+          "Statistical Analysis",
+          "Neuroscience",
+          "Consumer Behavior",
+          "Forecasting",
+          "Agile Methodologies",
+          "NLP",
+          "Computer Vision",
+          "Medical Image Analysis"
+        ],
+        "color": "gray"
+      }
+    ]
+  },
+  "publications": [
+    {
+      "title": "Attribute Relevance Score: A Novel Measure for Identifying Attribute Importance",
+      "authors": ["Pablo Neirz Vergara"],
+      "publication": "MDPI, Algorithms",
+      "date": "2024",
+      "doi": "10.3390/a17110518",
+      "description": "Research on a new measure for identifying attribute importance in datasets."
+    },
+    {
+      "title": "Prediction of Concrete Compressive Strength using Artificial Neural Networks",
+      "authors": ["Pablo Neirz Vergara"],
+      "publication": "Gradjevinar",
+      "date": "2020",
+      "doi": "10.14256/JCE.2438.2018",
+      "description": "Application of artificial neural networks to predict concrete compressive strength."
+    },
+    {
+      "title": "Guide: Non-Linear Feature Generation with GPlearn",
+      "authors": ["Pablo Neirz Vergara"],
+      "publication": "Kaggle (Bronze Medal)",
+      "date": "2024",
+      "link": "https://www.kaggle.com/code/poluxer/guide-non-linear-features-generation-with-gplearn",
+      "description": "Practical guide for generating non-linear features using the GPlearn library."
+    },
+    {
+      "title": "Double Master's Thesis: Dyslexia Detection using Convolutional Neural Networks",
+      "authors": ["Pablo Neirz Vergara"],
+      "publication": "Universidad de Oviedo / Autónoma de Chile",
+      "date": "2022",
+      "description": "Research on the use of convolutional neural networks for automatic dyslexia detection."
+    }
+  ],
+  "competitions": [
+    {
+      "title": "Financial Inclusion in Latin America",
+      "platform": "datasource.ai",
+      "url": "https://www.datasource.ai/en/home/data-science-competitions-for-startups/financial-inclusion-in-latam/leaderboard",
+      "position": "1st Place",
+      "description": "First place in financial inclusion competition in Latin America."
+    },
+    {
+      "title": "Apartment Price Prediction in Argentina and Colombia",
+      "platform": "datasource.ai",
+      "url": "https://www.datasource.ai/en/home/data-science-competitions-for-startups/real-estate-price-forecast/leaderboard",
+      "position": "3rd Place",
+      "description": "Third place in real estate price prediction competition."
+    },
+    {
+      "title": "Flight Delay Prediction",
+      "platform": "datasource.ai",
+      "url": "https://www.datasource.ai/en/home/data-science-competitions-for-startups/flight-delay-prediction-competition/leaderboard",
+      "position": "11th Place",
+      "description": "11th position in flight delay prediction competition."
+    },
+    {
+      "title": "AI Agents - Rock, Paper, Scissors",
+      "platform": "Kaggle",
+      "position": "Top 25%",
+      "description": "Top 25% in artificial intelligence agents competition."
+    }
+  ],
+  "certifications": [
+    {
+      "name": "SAS Essentials",
+      "issuer": "SAS",
+      "year": "2022"
+    },
+    {
+      "name": "Advanced Growth Strategies",
+      "issuer": "Reforge",
+      "year": "2022"
+    },
+    {
+      "name": "Behavioral Finance",
+      "issuer": "Duke University (Coursera)",
+      "year": "2021"
+    },
+    {
+      "name": "Technical Analysis and Trading Strategy",
+      "issuer": "Andia Academy",
+      "year": "2021"
+    },
+    {
+      "name": "Growth Hacking",
+      "issuer": "SENCE",
+      "year": "2020"
+    },
+    {
+      "name": "Big Data Visualization",
+      "issuer": "SENCE",
+      "year": "2020"
+    },
+    {
+      "name": "TensorFlow Workshop",
+      "issuer": "Metric Learning",
+      "year": "2019"
+    },
+    {
+      "name": "Project Management with Agile Methodologies",
+      "issuer": "SENCE",
+      "year": "2019"
+    },
+    {
+      "name": "SQL Fundamentals",
+      "issuer": "SoloLearn",
+      "year": "2018"
+    },
+    {
+      "name": "Basic Concepts of Strategic Planning",
+      "issuer": "Universidad Andrés Bello",
+      "year": "2018"
+    },
+    {
+      "name": "Medical Image Analysis",
+      "issuer": "Universidad de Concepción",
+      "year": "2018"
+    },
+    {
+      "name": "Data Structures and Algorithm Analysis",
+      "issuer": "Universidad de Concepción",
+      "year": "2018"
+    }
+  ],
+  "languages": [
+    {
+      "name": "Spanish",
+      "level": "Native"
+    },
+    {
+      "name": "English",
+      "level": "Advanced (C1)"
+    }
+  ]
+}

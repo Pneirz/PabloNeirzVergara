@@ -1,0 +1,27 @@
+---
+import CVSection from '../../components/CVSection.astro';
+import PublicationItem from '../../components/PublicationItem.astro';
+import type { Publication } from '../../types/cv-types';
+
+interface Props {
+  title: string;
+  items: Publication[];
+}
+
+const { title, items } = Astro.props;
+---
+
+<CVSection title={title} id="publications-section">
+  {items.map((pub, index) => (
+    <PublicationItem
+      title={pub.title}
+      authors={pub.authors}
+      publication={pub.publication}
+      date={pub.date}
+      doi={pub.doi}
+      link={pub.link}
+      description={pub.description}
+      id={`publication-${index}`}
+    />
+  ))}
+</CVSection>

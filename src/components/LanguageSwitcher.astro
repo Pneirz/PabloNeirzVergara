@@ -1,0 +1,159 @@
+---
+
+---
+
+<div class="language-switcher">
+  <div
+    class="relative inline-flex h-8 rounded-full bg-gray-200 p-1 shadow-inner transition-all duration-300"
+  >
+    <button
+      id="lang-es"
+      class="relative z-10 rounded-full px-3 text-sm font-medium transition-colors duration-300"
+      aria-pressed="true"
+    >
+      ES
+    </button>
+    <button
+      id="lang-en"
+      class="relative z-10 rounded-full px-3 text-sm font-medium transition-colors duration-300"
+      aria-pressed="false"
+    >
+      EN
+    </button>
+    <span
+      id="lang-indicator"
+      class="absolute inset-y-1 left-1 rounded-full bg-blue-600 shadow transition-all duration-300"
+    ></span>
+  </div>
+</div>
+
+<style>
+  .language-switcher {
+    display: flex;
+    justify-content: flex-end;
+  }
+</style>
+
+<script>
+  // Get language from localStorage or default to 'es'
+  const savedLanguage = localStorage.getItem('cv-language') || 'es';
+
+  const esButton = document.getElementById('lang-es');
+  const enButton = document.getElementById('lang-en');
+  const indicator = document.getElementById('lang-indicator');
+
+  // Initialize buttons state
+  function updateButtonStates(lang: 'es' | 'en') {
+    document.documentElement.setAttribute('lang', lang);
+
+    if (lang === 'es') {
+      // Update indicator position for Spanish
+      if (indicator) {
+        indicator.style.transform = 'translateX(0)';
+        indicator.style.width = `${esButton?.offsetWidth}px`;
+      }
+
+      // Update text colors
+      esButton?.classList.add('text-white');
+      esButton?.classList.remove('text-gray-700');
+      esButton?.setAttribute('aria-pressed', 'true');
+
+      enButton?.classList.add('text-gray-700');
+      enButton?.classList.remove('text-white');
+      enButton?.setAttribute('aria-pressed', 'false');
+    } else {
+      // Update indicator position for English
+      if (indicator && esButton) {
+        indicator.style.transform = `translateX(${esButton.offsetWidth}px)`;
+        indicator.style.width = `${enButton?.offsetWidth}px`;
+      }
+
+      // Update text colors
+      enButton?.classList.add('text-white');
+      enButton?.classList.remove('text-gray-700');
+      enButton?.setAttribute('aria-pressed', 'true');
+
+      esButton?.classList.add('text-gray-700');
+      esButton?.classList.remove('text-white');
+      esButton?.setAttribute('aria-pressed', 'false');
+    }
+  }
+
+  // Set initial sizing
+  window.addEventListener('DOMContentLoaded', () => {
+    // Set initial indicator width
+    if (indicator && esButton && enButton) {
+      indicator.style.width = `${savedLanguage === 'es' ? esButton.offsetWidth : enButton.offsetWidth}px`;
+      updateButtonStates(savedLanguage === 'en' ? 'en' : 'es');
+    }
+  });
+
+  // Dispatch custom event to notify language change
+  function notifyLanguageChange(lang: 'es' | 'en') {
+    const event = new CustomEvent('language-changed', {
+      detail: { language: lang },
+      bubbles: true,
+    });
+    document.dispatchEvent(event);
+
+    // Add a loading indicator while content is updating
+    document.body.classList.add('language-transition');
+    setTimeout(() => {
+      document.body.classList.remove('language-transition');
+    }, 500); // Match this with your transition duration
+  }
+
+  // Initialize with saved language
+  // Add click handlers
+  if (esButton) {
+    esButton.addEventListener('click', () => {
+      if (esButton && esButton.getAttribute('aria-pressed') !== 'true') {
+        localStorage.setItem('cv-language', 'es');
+        updateButtonStates('es');
+        notifyLanguageChange('es');
+      }
+    });
+  }
+
+  if (enButton) {
+    enButton.addEventListener('click', () => {
+      if (enButton && enButton.getAttribute('aria-pressed') !== 'true') {
+        localStorage.setItem('cv-language', 'en');
+        updateButtonStates('en');
+        notifyLanguageChange('en');
+        // Handle window resize to adjust indicator width
+        window.addEventListener('resize', () => {
+          const currentLang = document.documentElement.getAttribute('lang') || 'es';
+          updateButtonStates(currentLang === 'en' ? 'en' : 'es');
+        });
+      }
+    });
+  }
+</script>
+
+<style>
+  /* Add transition styles for the language switch */
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0.5;
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0.5;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .language-transition #cv-content {
+    animation:
+      fadeOut 0.25s ease-out forwards,
+      fadeIn 0.25s ease-in 0.25s forwards;
+  }
+</style>

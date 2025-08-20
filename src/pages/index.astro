@@ -1,11 +1,255 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import CVHeader from '../components/CVHeader.astro';
+import LanguageSwitcher from '../components/LanguageSwitcher.astro';
+import SummarySection from '../components/sections/SummarySection.astro';
+import ExperienceSection from '../components/sections/ExperienceSection.astro';
+import EducationSection from '../components/sections/EducationSection.astro';
+import SkillsContainerSection from '../components/sections/SkillsContainerSection.astro';
+import PublicationsSection from '../components/sections/PublicationsSection.astro';
+import CompetitionsSection from '../components/sections/CompetitionsSection.astro';
+import CertificationsSection from '../components/sections/CertificationsSection.astro';
+import LanguagesSection from '../components/sections/LanguagesSection.astro';
+import cvDataEs from '../data/cv-data.json';
+import cvDataEn from '../data/cv-data-en.json';
+import type { CVData } from '../types/cv-types';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+// We'll use Spanish as the default data, but the client-side script will update it
+const defaultData: CVData = cvDataEs as unknown as CVData;
+
+// Translation mapping for section titles
+const translations = {
+  es: {
+    title: 'Currículum Vitae',
+    summary: 'Resumen Profesional',
+    experience: 'Experiencia Laboral',
+    education: 'Educación',
+    skills: 'Habilidades Técnicas',
+    publications: 'Publicaciones',
+    competitions: 'Competencias',
+    certifications: 'Certificaciones',
+    languages: 'Idiomas',
+    link: 'Enlace',
+  },
+  en: {
+    title: 'Resume',
+    summary: 'Professional Summary',
+    experience: 'Work Experience',
+    education: 'Education',
+    skills: 'Technical Skills',
+    publications: 'Publications',
+    competitions: 'Competitions',
+    certifications: 'Certifications',
+    languages: 'Languages',
+    link: 'Link',
+  },
+};
 ---
 
-<Layout>
-	<Welcome />
+<Layout title={`${translations.es.title} - Pablo Neirz Vergara`}>
+  <div class="min-h-screen bg-blue-50 px-4 py-8">
+    <div class="mx-auto max-w-4xl rounded-lg bg-white p-4 shadow-lg sm:p-8">
+      <!-- Language Switcher -->
+      <div class="mb-4 flex justify-end">
+        <LanguageSwitcher />
+      </div>
+
+      <!-- Main CV Content -->
+      <div id="cv-content">
+        <CVHeader
+          name={defaultData.personalInfo.name}
+          title={defaultData.personalInfo.title}
+          email={defaultData.personalInfo.email}
+          phone={defaultData.personalInfo.phone}
+          location={defaultData.personalInfo.location}
+          linkedin={defaultData.personalInfo.linkedin}
+          github={defaultData.personalInfo.github}
+          website={defaultData.personalInfo.website}
+          diplomas={defaultData.personalInfo.diplomas}
+        />
+
+        <!-- Resumen Profesional -->
+        <SummarySection title={translations.es.summary} summary={defaultData.summary} />
+
+        <!-- Experiencia Laboral -->
+        <ExperienceSection title={translations.es.experience} items={defaultData.experience} />
+
+        <!-- Educación -->
+        <EducationSection title={translations.es.education} items={defaultData.education} />
+
+        <!-- Habilidades -->
+        <SkillsContainerSection
+          title={translations.es.skills}
+          categories={defaultData.skills.categories}
+        />
+
+        <!-- Publicaciones -->
+        <PublicationsSection title={translations.es.publications} items={defaultData.publications} />
+
+        <!-- Competencias -->
+        <CompetitionsSection
+          title={translations.es.competitions}
+          items={defaultData.competitions}
+          linkLabel={translations.es.link}
+        />
+
+        <!-- Certificaciones -->
+        <CertificationsSection title={translations.es.certifications} items={defaultData.certifications} />
+
+        <!-- Idiomas -->
+        <LanguagesSection title={translations.es.languages} items={defaultData.languages} />
+      </div>
+    </div>
+  </div>
 </Layout>
+
+<script define:vars={{ cvDataEs, cvDataEn, translations }}>
+  // Function to update content based on language
+  function updateContent(language) {
+    // Get data based on language
+    const data = language === 'en' ? cvDataEn : cvDataEs;
+    const trans = translations[language];
+
+    // Update page title
+    document.title = `${trans.title} - ${data.personalInfo.name}`;
+
+    // Update header information
+    const headerTitle = document.querySelector('h2');
+    if (headerTitle) {
+      headerTitle.textContent = data.personalInfo.title;
+    }
+
+    // Update section titles
+    document.querySelectorAll('section h3').forEach((heading, index) => {
+      const sectionKey = Object.keys(trans)[index + 1]; // +1 to skip 'title'
+      if (sectionKey && trans[sectionKey]) {
+        heading.textContent = trans[sectionKey];
+      }
+    });
+
+    // Update summary content
+    const summaryText = document.getElementById('summary-text');
+    if (summaryText) {
+      summaryText.textContent = data.summary;
+    }
+
+    // Update experience items
+    data.experience.forEach((exp, index) => {
+      const expItem = document.getElementById(`experience-${index}`);
+      if (expItem) {
+        const position = expItem.querySelector('h4');
+        const company = expItem.querySelector('h5');
+        const period = expItem.querySelector('span.text-gray-500');
+        const descItems = expItem.querySelectorAll('ul.list-disc li');
+
+        if (position) position.textContent = exp.position;
+        if (company) company.textContent = exp.company;
+        if (period) period.textContent = exp.period;
+
+        exp.description.forEach((desc, i) => {
+          if (descItems[i]) {
+            // Handle markdown links
+            if (desc.includes('[')) {
+              descItems[i].innerHTML = processMarkdownLinks(desc);
+            } else {
+              descItems[i].textContent = desc;
+            }
+          }
+        });
+      }
+    });
+
+    // Update education items
+    data.education.forEach((edu, index) => {
+      const eduItem = document.getElementById(`education-${index}`);
+      if (eduItem) {
+        const degree = eduItem.querySelector('h4');
+        const institution = eduItem.querySelector('h5');
+        const period = eduItem.querySelector('span.text-gray-500');
+
+        if (degree) degree.textContent = edu.degree;
+        if (institution) institution.textContent = edu.institution;
+        if (period) period.textContent = edu.period;
+      }
+    });
+
+    // Update skills section
+    // Skills are mostly language-agnostic, but titles need translation
+    const skillsCategories = document.querySelectorAll('#skills-section h4');
+    data.skills.categories.forEach((category, index) => {
+      if (skillsCategories[index]) {
+        skillsCategories[index].textContent = category.title;
+      }
+    });
+
+    // Update publications
+    data.publications.forEach((pub, index) => {
+      const pubItem = document.getElementById(`publication-${index}`);
+      if (pubItem) {
+        const title = pubItem.querySelector('h4');
+        const description = pubItem.querySelector('p.text-gray-700');
+
+        if (title) title.textContent = pub.title;
+        if (description) description.textContent = pub.description;
+      }
+    });
+
+    // Update competitions
+    data.competitions.forEach((comp, index) => {
+      const compItem = document.getElementById(`competition-${index}`);
+      if (compItem) {
+        const title = compItem.querySelector('h4');
+        const position = compItem.querySelector('span.text-blue-800');
+        const linkText = compItem.querySelector('.link-text');
+
+        if (title) title.textContent = comp.title;
+        if (position) position.textContent = comp.position;
+        if (linkText) linkText.textContent = trans.link;
+      }
+    });
+
+    // Update certifications
+    data.certifications.forEach((cert, index) => {
+      const certItem = document.getElementById(`certification-${index}`);
+      if (certItem) {
+        const name = certItem.querySelector('h4');
+        const issuer = certItem.querySelector('p');
+
+        if (name) name.textContent = cert.name;
+        if (issuer) issuer.textContent = cert.issuer;
+      }
+    });
+
+    // Update languages
+    data.languages.forEach((lang, index) => {
+      const langItem = document.getElementById(`language-${index}`);
+      if (langItem) {
+        const name = langItem.querySelector('h4');
+        const level = langItem.querySelector('p');
+
+        if (name) name.textContent = lang.name;
+        if (level) level.textContent = lang.level;
+      }
+    });
+  }
+
+  // Helper function to process markdown links
+  function processMarkdownLinks(text) {
+    return text.replace(
+      /\[([^\]]+)\]\(([^)]+)\)/g,
+      '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 underline">$1</a>',
+    );
+  }
+
+  // Listen for language change events
+  document.addEventListener('language-changed', (event) => {
+    const language = event.detail.language;
+    updateContent(language);
+  });
+
+  // Initialize with saved language
+  const savedLanguage = localStorage.getItem('cv-language') || 'es';
+  if (savedLanguage === 'en') {
+    updateContent('en');
+  }
+</script>
