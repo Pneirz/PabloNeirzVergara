@@ -12,15 +12,17 @@ const { title, items } = Astro.props;
 ---
 
 <CVSection title={title} id="experience-section">
-  {items.map((exp, index) => (
-    <ExperienceItem
-      position={exp.position}
-      company={exp.company}
-      period={exp.period}
-      location={exp.location}
-      description={exp.description}
-      technologies={exp.technologies}
-      id={`experience-${index}`}
-    />
-  ))}
+  {
+    items.map((exp, index) => (
+      <ExperienceItem
+        position={exp.position}
+        company={exp.company}
+        period={exp.period}
+        location={exp.location}
+        description={exp.description}
+        technologies={exp.technologies}
+        id={`experience-${index}`}
+      />
+    ))
+  }
 </CVSection>

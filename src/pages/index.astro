@@ -26,7 +26,7 @@ const translations = {
     education: 'Educación',
     skills: 'Habilidades Técnicas',
     publications: 'Publicaciones',
-    competitions: 'Competencias',
+    competitions: 'Competencias y Premios',
     certifications: 'Certificaciones',
     languages: 'Idiomas',
     link: 'Enlace',
@@ -38,7 +38,7 @@ const translations = {
     education: 'Education',
     skills: 'Technical Skills',
     publications: 'Publications',
-    competitions: 'Competitions',
+    competitions: 'Competitions & Awards',
     certifications: 'Certifications',
     languages: 'Languages',
     link: 'Link',
@@ -65,6 +65,7 @@ const translations = {
           linkedin={defaultData.personalInfo.linkedin}
           github={defaultData.personalInfo.github}
           website={defaultData.personalInfo.website}
+          scholar={defaultData.personalInfo.scholar}
           diplomas={defaultData.personalInfo.diplomas}
         />
 
@@ -84,7 +85,10 @@ const translations = {
         />
 
         <!-- Publicaciones -->
-        <PublicationsSection title={translations.es.publications} items={defaultData.publications} />
+        <PublicationsSection
+          title={translations.es.publications}
+          items={defaultData.publications}
+        />
 
         <!-- Competencias -->
         <CompetitionsSection
@@ -94,7 +98,10 @@ const translations = {
         />
 
         <!-- Certificaciones -->
-        <CertificationsSection title={translations.es.certifications} items={defaultData.certifications} />
+        <CertificationsSection
+          title={translations.es.certifications}
+          items={defaultData.certifications}
+        />
 
         <!-- Idiomas -->
         <LanguagesSection title={translations.es.languages} items={defaultData.languages} />

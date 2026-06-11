@@ -8,10 +8,12 @@ export interface Props {
   linkedin?: string;
   github?: string;
   website?: string;
+  scholar?: string;
   diplomas?: string;
 }
 
-const { name, title, email, phone, location, linkedin, github, website, diplomas } = Astro.props;
+const { name, title, email, phone, location, linkedin, github, website, scholar, diplomas } =
+  Astro.props;
 
 // Import CV PDFs (Spanish default)
 import cvEs from '../assets/Pablo Neirz Vergara_CV_ESP.pdf';
@@ -90,6 +92,18 @@ import cvEn from '../assets/Pablo Neirz Vergara_CV_ENG.pdf';
           class="text-sm text-green-600 transition-colors hover:text-green-800"
         >
           Website
+        </a>
+      )
+    }
+    {
+      scholar && (
+        <a
+          href={scholar}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-sm text-indigo-600 transition-colors hover:text-indigo-800"
+        >
+          Google Scholar
         </a>
       )
     }

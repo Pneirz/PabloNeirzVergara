@@ -4,11 +4,12 @@
     "title": "Senior Data Science Engineer",
     "email": "pablo.neirz.vergara@gmail.com",
     "phone": "+56 9 5635 4886",
-    "linkedin": "https://www.linkedin.com/in/pablo-neirz-vergara-68b509159",
+    "linkedin": "https://www.linkedin.com/in/pablo-neirz-68b509159/",
+    "scholar": "https://scholar.google.com/citations?user=xcEci0AAAAAJ",
     "diplomas": "https://drive.google.com/drive/u/0/folders/1r_Hxq1IH4wD5-vAFJQkEFFLH6l9QZ-5G"
   },
   "language": "en",
-  "summary": "Senior data scientist with over 8 years of experience in Python, machine learning, natural language processing (NLP), computer vision, and big data analytics. Specialized in optimizing e-commerce operations and forecasting with state-of-the-art models such as TFT, NHITS, NBEATS, and LightGBM, consistently achieving forecast accuracies above 90%. Expert in translating complex insights for cross-functional teams, with publications in high-impact journals, 2nd place worldwide in datasource.ai (2020), keynote speaker at events like FLISOL, and interviewed on ProinChile podcast on Spotify. Strong background in NLP techniques, including semantic distances between concepts (e.g., embeddings and conceptual similarity), prompt engineering with rules and MCP, pattern detection, and computer vision (e.g., image segmentation, OCR, object detection)",
+  "summary": "Senior data scientist and PhD candidate in Informatics Engineering (UTFSM, thesis defense expected in 2026) with over 10 years of experience in Python, machine learning, natural language processing (NLP), computer vision, and big data analytics. Research focused on trustworthy AI and causal machine learning, with publications in high-impact journals including Scientific Reports (Nature Portfolio) and Algorithms (MDPI). In industry, specialized in optimizing e-commerce operations and forecasting with state-of-the-art models such as TFT, NHITS, NBEATS, and LightGBM, consistently achieving forecast accuracies above 90%. Skilled at communicating complex findings to cross-functional teams: 1st and 3rd place finishes in international data science competitions, keynote speaker at events such as FLISOL, and featured on the ProinChile podcast on Spotify. Strong command of NLP techniques (embeddings and semantic similarity between concepts), prompt engineering with rules and MCP, pattern detection, and computer vision (image segmentation, OCR, object detection).",
   "experience": [
     {
       "position": "Senior Data Science Engineer",
@@ -16,8 +17,8 @@
       "period": "December 2023 - Present",
       "location": "Santiago, Chile",
       "description": [
-        "Developed advanced machine learning models to optimize e-commerce operations, improving inventory and sales forecasting accuracy using state-of-the-art models like TFT, NHITS, NBEATS, and LightGBM",
-        "Collaborated with international teams to define priority air cargo strategies and develop priority models, achieving forecast accuracies consistently above 90%, increasing logistics efficiency by 20%",
+        "Develop advanced machine learning models to optimize e-commerce operations, improving inventory and sales forecasting accuracy with state-of-the-art models such as TFT, NHITS, NBEATS, and LightGBM",
+        "Collaborate with international teams to define priority air cargo strategies and develop prioritization models, achieving forecast accuracies consistently above 90% and increasing logistics efficiency by 20%",
         "Developed and implemented a machine learning ensemble model for time series, adopted by multiple teams, that outperformed Meta's Prophet model by up to 10 percentage points in forecast accuracy, significantly improving data-driven decision making"
       ],
       "technologies": [
@@ -94,9 +95,9 @@
       "period": "March 2019 - July 2020",
       "location": "Santiago, Chile",
       "description": [
-        "Temporarily led the analytics area for Chile and Peru, reorganizing teams after COVID impact using agile methodologies",
+        "Served as interim lead of the analytics area for Chile and Peru, reorganizing teams after the impact of COVID using agile methodologies",
         "Developed scrapers for public market data and used transparency law data to create a tender alert system, achieving a competitive advantage of several months",
-        "Developed OCR to break captchas",
+        "Developed OCR systems to automate visual verification (captcha) steps in public data collection",
         "Developed NLP models to detect patterns in public markets"
       ],
       "technologies": [
@@ -114,8 +115,8 @@
       "period": "March 2018 - December 2019",
       "location": "Concepción, Chile",
       "description": [
-        "Brain Connectivity Analysis through combined use of functional Magnetic Resonance Imaging and Tractography (FONDECYT ACT 1161427)",
-        "Development of Ant Colony Algorithm for Image Edge Detection, used for artifact segmentation in brain magnetic resonance imaging"
+        "Conducted brain connectivity analysis through the combined use of functional MRI and tractography (FONDECYT project ACT 1161427)",
+        "Developed an ant colony algorithm for image edge detection, applied to artifact segmentation in brain MRI"
       ],
       "technologies": [
         "Medical Imaging",
@@ -145,9 +146,9 @@
   ],
   "education": [
     {
-      "degree": "PhD in Computer Engineering (In Progress)",
+      "degree": "PhD in Informatics Engineering (thesis defense expected 2026)",
       "institution": "Universidad Técnica Federico Santa María",
-      "period": "2022 - Present",
+      "period": "2022 - 2026",
       "location": "Chile"
     },
     {
@@ -169,7 +170,7 @@
       "location": "Spain"
     },
     {
-      "degree": "Bachelor's Degree in Physical Sciences",
+      "degree": "Bachelor of Science in Physics",
       "institution": "Universidad de Concepción",
       "period": "2011 - 2017",
       "location": "Chile"
@@ -229,7 +230,9 @@
           "Agile Methodologies",
           "NLP",
           "Computer Vision",
-          "Medical Image Analysis"
+          "Medical Image Analysis",
+          "Causal ML",
+          "Trustworthy AI"
         ],
         "color": "gray"
       }
@@ -237,17 +240,25 @@
   },
   "publications": [
     {
+      "title": "Epistemic Frontiers and the Distinction between Causality, Information, and Predictability in Pattern Recognition",
+      "authors": ["Pablo Neirz Vergara", "Héctor Allende", "Carolina Saavedra"],
+      "publication": "Scientific Reports (Nature Portfolio)",
+      "date": "2026",
+      "doi": "10.1038/s41598-026-52883-z",
+      "description": "Epistemological framework distinguishing causality, statistical dependence, and predictive effects in pattern recognition, clarifying why high predictive accuracy does not imply causal understanding."
+    },
+    {
       "title": "Attribute Relevance Score: A Novel Measure for Identifying Attribute Importance",
-      "authors": ["Pablo Neirz Vergara"],
-      "publication": "MDPI, Algorithms",
+      "authors": ["Pablo Neirz Vergara", "Héctor Allende", "Carolina Saavedra"],
+      "publication": "Algorithms (MDPI)",
       "date": "2024",
       "doi": "10.3390/a17110518",
       "description": "Research on a new measure for identifying attribute importance in datasets."
     },
     {
-      "title": "Prediction of Concrete Compressive Strength using Artificial Neural Networks",
-      "authors": ["Pablo Neirz Vergara"],
-      "publication": "Gradjevinar",
+      "title": "Prediction of Concrete Compressive Strength through Artificial Neural Networks",
+      "authors": ["Pablo Neirz Vergara", "Leonardo Bennun", "Mauricio Pradena", "J. Gómez"],
+      "publication": "Građevinar, 72(7), 585–592",
       "date": "2020",
       "doi": "10.14256/JCE.2438.2018",
       "description": "Application of artificial neural networks to predict concrete compressive strength."
@@ -261,14 +272,20 @@
       "description": "Practical guide for generating non-linear features using the GPlearn library."
     },
     {
-      "title": "Double Master's Thesis: Dyslexia Detection using Convolutional Neural Networks",
+      "title": "Dyslexia Detection using Convolutional Neural Networks (Dual Master's Thesis)",
       "authors": ["Pablo Neirz Vergara"],
-      "publication": "Universidad de Oviedo / Autónoma de Chile",
+      "publication": "Universidad de Oviedo / Universidad Autónoma de Chile",
       "date": "2022",
       "description": "Research on the use of convolutional neural networks for automatic dyslexia detection."
     }
   ],
   "competitions": [
+    {
+      "title": "MercadoLibre Innovation Challenge 2024",
+      "platform": "MercadoLibre",
+      "position": "Winner",
+      "description": "Winner of MercadoLibre's internal Innovation Challenge (2024)."
+    },
     {
       "title": "Financial Inclusion in Latin America",
       "platform": "datasource.ai",
@@ -298,6 +315,11 @@
     }
   ],
   "certifications": [
+    {
+      "name": "English C1 Advanced (EF SET Certificate)",
+      "issuer": "EF Standard English Test",
+      "year": "2026"
+    },
     {
       "name": "SAS Essentials",
       "issuer": "SAS",
@@ -366,7 +388,7 @@
     },
     {
       "name": "English",
-      "level": "Intermediate (B1)"
+      "level": "Advanced (C1, EF SET certified)"
     }
   ]
 }

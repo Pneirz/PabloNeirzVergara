@@ -4,11 +4,12 @@
     "title": "Ingeniero Senior en Ciencia de Datos",
     "email": "pablo.neirz.vergara@gmail.com",
     "phone": "+56 9 5635 4886",
-    "linkedin": "https://www.linkedin.com/in/pablo-neirz-vergara-68b509159",
+    "linkedin": "https://www.linkedin.com/in/pablo-neirz-68b509159/",
+    "scholar": "https://scholar.google.com/citations?user=xcEci0AAAAAJ",
     "diplomas": "https://drive.google.com/drive/u/0/folders/1r_Hxq1IH4wD5-vAFJQkEFFLH6l9QZ-5G"
   },
   "language": "es",
-  "summary": "Científico de datos senior con más de 8 años de experiencia en Python, machine learning, procesamiento de lenguaje natural (NLP), visión por computadora y análisis de big data. Especializado en optimizar operaciones de comercio electrónico y pronósticos con modelos del estado del arte como TFT, NHITS, NBEATS y LightGBM, logrando accuracies de pronóstico consistentemente por sobre el 90%. Experto en traducir insights complejos para equipos interdisciplinarios, con publicaciones en revistas de alto impacto, 2.º lugar mundial en datasource.ai (2020), orador principal en eventos como FLISOL y entrevistado en podcast de ProinChile en Spotify. Fuerte background en técnicas de NLP, incluyendo distancias semánticas entre conceptos (ej., embeddings y similitud conceptual), Promptengineering con uso de rules y MCP, detección de patrones, y visión por computadora (ej., segmentación de imágenes, OCR, detección de objetos)",
+  "summary": "Científico de datos senior y candidato a doctor en Ingeniería Informática (UTFSM, defensa de tesis prevista para 2026), con más de 10 años de experiencia en Python, machine learning, procesamiento de lenguaje natural (NLP), visión por computadora y análisis de big data. Investigación centrada en IA confiable (Trustworthy AI) y aprendizaje automático causal, con publicaciones en revistas de alto impacto como Scientific Reports (Nature Portfolio) y Algorithms (MDPI). En la industria, especializado en optimizar operaciones de comercio electrónico y pronósticos con modelos del estado del arte como TFT, NHITS, NBEATS y LightGBM, logrando precisiones de pronóstico consistentemente superiores al 90%. Experto en comunicar hallazgos complejos a equipos interdisciplinarios: 1.er y 3.er lugar en competencias internacionales de ciencia de datos, orador principal en eventos como FLISOL y entrevistado en el podcast de ProinChile en Spotify. Sólido dominio de técnicas de NLP (embeddings y similitud semántica entre conceptos), ingeniería de prompts con reglas y MCP, detección de patrones y visión por computadora (segmentación de imágenes, OCR, detección de objetos).",
   "experience": [
     {
       "position": "Ingeniero Senior en Ciencia de Datos",
@@ -16,9 +17,9 @@
       "period": "Diciembre 2023 - Presente",
       "location": "Santiago, Chile",
       "description": [
-        "Desarrollé modelos avanzados de aprendizaje automático para optimizar operaciones de comercio electrónico, mejorando la precisión de pronósticos de inventario y ventas, mediante modelos del estado del arte cómo TFT, NHITS, NBEATS, y LightGBM",
-        "Colaboré con equipos internacionales para definir estrategias de carga aérea prioritaria, y desarrollo de modelos de prioridad, logrando forecast accuracies consistentemente por sobre el 90% incrementando la eficiencia logística en un 20%",
-        "Desarrollé e implementé un modelo de ensamblaje de machine learning para series temporales, adoptado por múltiples equipos, que superó el modelo Prophet de Meta en hasta 10 puntos porcentuales en precisión de pronósticos (forecast accuracy), mejorando significativamente la toma de decisiones basada en datos"
+        "Desarrollo modelos avanzados de aprendizaje automático para optimizar operaciones de comercio electrónico, mejorando la precisión de pronósticos de inventario y ventas mediante modelos del estado del arte como TFT, NHITS, NBEATS y LightGBM",
+        "Colaboro con equipos internacionales en la definición de estrategias de carga aérea prioritaria y el desarrollo de modelos de priorización, logrando precisiones de pronóstico consistentemente superiores al 90% e incrementando la eficiencia logística en un 20%",
+        "Desarrollé e implementé un modelo de ensamble de machine learning para series temporales, adoptado por múltiples equipos, que superó al modelo Prophet de Meta por hasta 10 puntos porcentuales de precisión de pronóstico, mejorando significativamente la toma de decisiones basada en datos"
       ],
       "technologies": [
         "Python",
@@ -96,8 +97,8 @@
       "description": [
         "Lideré interinamente el área de analítica para Chile y Perú, reorganizando equipos tras el impacto del COVID con metodologías ágiles",
         "Desarrollé scrapers para datos de mercado público y utilicé datos de la ley de transparencia para crear un sistema de alertas de licitaciones, logrando una ventaja competitiva de varios meses",
-        "Desarrollo de OCR para romper captchas",
-        "Desarrollo de modelos de NLP para detectar patrones en mercado público"
+        "Desarrollé sistemas de OCR para automatizar verificaciones visuales (captchas) en la recolección de datos públicos",
+        "Desarrollé modelos de NLP para detectar patrones en el mercado público"
       ],
       "technologies": [
         "Python",
@@ -114,8 +115,8 @@
       "period": "Marzo 2018 - Diciembre 2019",
       "location": "Concepción, Chile",
       "description": [
-        "Análisis de Conectividad Cerebral mediante uso combinado de Resonancia Magnética funcional y Tractografía (FONDECYT ACT 1161427)",
-        "Desarrollo de Algoritmo de Colonia de Hormigas para la Detección de Bordes de Imágenes, usado para segmentación de artefactos en resonancias magnéticas del cerebro"
+        "Analicé conectividad cerebral mediante el uso combinado de resonancia magnética funcional y tractografía (proyecto FONDECYT ACT 1161427)",
+        "Desarrollé un algoritmo de colonia de hormigas para la detección de bordes en imágenes, aplicado a la segmentación de artefactos en resonancias magnéticas cerebrales"
       ],
       "technologies": [
         "Medical Imaging",
@@ -145,9 +146,9 @@
   ],
   "education": [
     {
-      "degree": "Doctorado en Ingeniería Informática (En curso)",
+      "degree": "Doctorado en Ingeniería Informática (defensa de tesis prevista para 2026)",
       "institution": "Universidad Técnica Federico Santa María",
-      "period": "2022 - Presente",
+      "period": "2022 - 2026",
       "location": "Chile"
     },
     {
@@ -229,7 +230,9 @@
           "Metodologías Ágiles",
           "NLP",
           "Computer Vision",
-          "Análisis de Imágenes Médicas"
+          "Análisis de Imágenes Médicas",
+          "Causal ML",
+          "Trustworthy AI"
         ],
         "color": "gray"
       }
@@ -237,17 +240,25 @@
   },
   "publications": [
     {
+      "title": "Epistemic Frontiers and the Distinction between Causality, Information, and Predictability in Pattern Recognition",
+      "authors": ["Pablo Neirz Vergara", "Héctor Allende", "Carolina Saavedra"],
+      "publication": "Scientific Reports (Nature Portfolio)",
+      "date": "2026",
+      "doi": "10.1038/s41598-026-52883-z",
+      "description": "Marco epistemológico que distingue entre causalidad, dependencia estadística y efectos predictivos en el reconocimiento de patrones, clarificando por qué la alta precisión predictiva no implica comprensión causal."
+    },
+    {
       "title": "Attribute Relevance Score: A Novel Measure for Identifying Attribute Importance",
-      "authors": ["Pablo Neirz Vergara"],
-      "publication": "MDPI, Algorithms",
+      "authors": ["Pablo Neirz Vergara", "Héctor Allende", "Carolina Saavedra"],
+      "publication": "Algorithms (MDPI)",
       "date": "2024",
       "doi": "10.3390/a17110518",
       "description": "Investigación sobre una nueva medida para identificar la importancia de atributos en conjuntos de datos."
     },
     {
-      "title": "Predicción de la Resistencia a la Compresión del Concreto mediante Redes Neuronales Artificiales",
-      "authors": ["Pablo Neirz Vergara"],
-      "publication": "Gradjevinar",
+      "title": "Prediction of Concrete Compressive Strength through Artificial Neural Networks",
+      "authors": ["Pablo Neirz Vergara", "Leonardo Bennun", "Mauricio Pradena", "J. Gómez"],
+      "publication": "Građevinar, 72(7), 585–592",
       "date": "2020",
       "doi": "10.14256/JCE.2438.2018",
       "description": "Aplicación de redes neuronales artificiales para predecir la resistencia a la compresión del concreto."
@@ -261,14 +272,20 @@
       "description": "Guía práctica para la generación de características no lineales utilizando la biblioteca GPlearn."
     },
     {
-      "title": "Tesis de Maestría Doble: Detección de Dislexia mediante Redes Neuronales Convolucionales",
+      "title": "Detección de Dislexia mediante Redes Neuronales Convolucionales (Tesis de Doble Magíster)",
       "authors": ["Pablo Neirz Vergara"],
-      "publication": "Universidad de Oviedo / Autónoma de Chile",
+      "publication": "Universidad de Oviedo / Universidad Autónoma de Chile",
       "date": "2022",
       "description": "Investigación sobre el uso de redes neuronales convolucionales para la detección automática de dislexia."
     }
   ],
   "competitions": [
+    {
+      "title": "Challenge Innovación MercadoLibre 2024",
+      "platform": "MercadoLibre",
+      "position": "Ganador",
+      "description": "Ganador del Challenge de Innovación interno de MercadoLibre (2024)."
+    },
     {
       "title": "Inclusión Financiera en América Latina",
       "platform": "datasource.ai",
@@ -298,6 +315,11 @@
     }
   ],
   "certifications": [
+    {
+      "name": "Inglés C1 Avanzado (EF SET Certificate)",
+      "issuer": "EF Standard English Test",
+      "year": "2026"
+    },
     {
       "name": "SAS Essentials",
       "issuer": "SAS",
@@ -366,7 +388,7 @@
     },
     {
       "name": "Inglés",
-      "level": "Intermedio (B1)"
+      "level": "Avanzado (C1, certificado EF SET)"
     }
   ]
 }

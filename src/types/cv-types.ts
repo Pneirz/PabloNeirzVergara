@@ -7,6 +7,7 @@ export interface PersonalInfo {
   linkedin?: string;
   github?: string;
   website?: string;
+  scholar?: string; // Google Scholar profile URL
   diplomas?: string; // Optional field for diplomas or additional documents
 }
 
