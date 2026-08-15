@@ -9,7 +9,7 @@
     "diplomas": "https://drive.google.com/drive/u/0/folders/1r_Hxq1IH4wD5-vAFJQkEFFLH6l9QZ-5G"
   },
   "language": "es",
-  "summary": "Científico de datos senior y candidato a doctor en Ingeniería Informática (UTFSM, defensa de tesis prevista para 2026), con más de 10 años de experiencia en Python, machine learning, procesamiento de lenguaje natural (NLP), visión por computadora y análisis de big data. Investigación centrada en IA confiable (Trustworthy AI) y aprendizaje automático causal, con publicaciones en revistas de alto impacto como Scientific Reports (Nature Portfolio) y Algorithms (MDPI). En la industria, especializado en optimizar operaciones de comercio electrónico y pronósticos con modelos del estado del arte como TFT, NHITS, NBEATS y LightGBM, logrando precisiones de pronóstico consistentemente superiores al 90%. Experto en comunicar hallazgos complejos a equipos interdisciplinarios: 1.er y 3.er lugar en competencias internacionales de ciencia de datos, orador principal en eventos como FLISOL y entrevistado en el podcast de ProinChile en Spotify. Sólido dominio de técnicas de NLP (embeddings y similitud semántica entre conceptos), ingeniería de prompts con reglas y MCP, detección de patrones y visión por computadora (segmentación de imágenes, OCR, detección de objetos).",
+  "summary": "Científico de datos senior y doctor en Ingeniería Informática por la Universidad Técnica Federico Santa María (UTFSM), con más de 10 años de experiencia en Python, machine learning, procesamiento de lenguaje natural (NLP), visión por computadora y análisis de big data. Investigación centrada en IA confiable (Trustworthy AI) y aprendizaje automático causal, con publicaciones en revistas de alto impacto como Scientific Reports (Nature Portfolio) y Algorithms (MDPI). En la industria, especializado en optimizar operaciones de comercio electrónico y pronósticos con modelos del estado del arte como TFT, NHITS, NBEATS y LightGBM, logrando precisiones de pronóstico consistentemente superiores al 90%. Experto en comunicar hallazgos complejos a equipos interdisciplinarios: 1.er y 3.er lugar en competencias internacionales de ciencia de datos, orador principal en eventos como FLISOL y entrevistado en el podcast de ProinChile en Spotify. Sólido dominio de técnicas de NLP (embeddings y similitud semántica entre conceptos), detección de patrones y visión por computadora (segmentación de imágenes, OCR, detección de objetos).",
   "experience": [
     {
       "position": "Ingeniero Senior en Ciencia de Datos",
@@ -17,6 +17,7 @@
       "period": "Diciembre 2023 - Presente",
       "location": "Santiago, Chile",
       "description": [
+        "Diseño e implemento laboratorios autónomos de IA para mejorar el desempeño de algoritmos de machine learning, probar hipótesis de manera reproducible y documentar tanto los enfoques efectivos como los que no producen mejoras",
         "Desarrollo modelos avanzados de aprendizaje automático para optimizar operaciones de comercio electrónico, mejorando la precisión de pronósticos de inventario y ventas mediante modelos del estado del arte como TFT, NHITS, NBEATS y LightGBM",
         "Colaboro con equipos internacionales en la definición de estrategias de carga aérea prioritaria y el desarrollo de modelos de priorización, logrando precisiones de pronóstico consistentemente superiores al 90% e incrementando la eficiencia logística en un 20%",
         "Desarrollé e implementé un modelo de ensamble de machine learning para series temporales, adoptado por múltiples equipos, que superó al modelo Prophet de Meta por hasta 10 puntos porcentuales de precisión de pronóstico, mejorando significativamente la toma de decisiones basada en datos"
@@ -146,7 +147,7 @@
   ],
   "education": [
     {
-      "degree": "Doctorado en Ingeniería Informática (defensa de tesis prevista para 2026)",
+      "degree": "Doctor en Ingeniería Informática",
       "institution": "Universidad Técnica Federico Santa María",
       "period": "2022 - 2026",
       "location": "Chile"

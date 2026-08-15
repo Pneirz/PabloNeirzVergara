@@ -9,7 +9,7 @@
     "diplomas": "https://drive.google.com/drive/u/0/folders/1r_Hxq1IH4wD5-vAFJQkEFFLH6l9QZ-5G"
   },
   "language": "en",
-  "summary": "Senior data scientist and PhD candidate in Informatics Engineering (UTFSM, thesis defense expected in 2026) with over 10 years of experience in Python, machine learning, natural language processing (NLP), computer vision, and big data analytics. Research focused on trustworthy AI and causal machine learning, with publications in high-impact journals including Scientific Reports (Nature Portfolio) and Algorithms (MDPI). In industry, specialized in optimizing e-commerce operations and forecasting with state-of-the-art models such as TFT, NHITS, NBEATS, and LightGBM, consistently achieving forecast accuracies above 90%. Skilled at communicating complex findings to cross-functional teams: 1st and 3rd place finishes in international data science competitions, keynote speaker at events such as FLISOL, and featured on the ProinChile podcast on Spotify. Strong command of NLP techniques (embeddings and semantic similarity between concepts), prompt engineering with rules and MCP, pattern detection, and computer vision (image segmentation, OCR, object detection).",
+  "summary": "Senior data scientist with a PhD in Informatics Engineering from Universidad Técnica Federico Santa María (UTFSM) and over 10 years of experience in Python, machine learning, natural language processing (NLP), computer vision, and big data analytics. Research focused on trustworthy AI and causal machine learning, with publications in high-impact journals including Scientific Reports (Nature Portfolio) and Algorithms (MDPI). In industry, specialized in optimizing e-commerce operations and forecasting with state-of-the-art models such as TFT, NHITS, NBEATS, and LightGBM, consistently achieving forecast accuracies above 90%. Skilled at communicating complex findings to cross-functional teams: 1st and 3rd place finishes in international data science competitions, keynote speaker at events such as FLISOL, and featured on the ProinChile podcast on Spotify. Strong command of NLP techniques (embeddings and semantic similarity between concepts), pattern detection, and computer vision (image segmentation, OCR, object detection).",
   "experience": [
     {
       "position": "Senior Data Science Engineer",
@@ -17,6 +17,7 @@
       "period": "December 2023 - Present",
       "location": "Santiago, Chile",
       "description": [
+        "Design and implement autonomous AI labs to improve machine learning algorithm performance, test hypotheses reproducibly, and document both effective approaches and those that do not yield improvements",
         "Develop advanced machine learning models to optimize e-commerce operations, improving inventory and sales forecasting accuracy with state-of-the-art models such as TFT, NHITS, NBEATS, and LightGBM",
         "Collaborate with international teams to define priority air cargo strategies and develop prioritization models, achieving forecast accuracies consistently above 90% and increasing logistics efficiency by 20%",
         "Developed and implemented a machine learning ensemble model for time series, adopted by multiple teams, that outperformed Meta's Prophet model by up to 10 percentage points in forecast accuracy, significantly improving data-driven decision making"
@@ -146,7 +147,7 @@
   ],
   "education": [
     {
-      "degree": "PhD in Informatics Engineering (thesis defense expected 2026)",
+      "degree": "PhD in Informatics Engineering",
       "institution": "Universidad Técnica Federico Santa María",
       "period": "2022 - 2026",
       "location": "Chile"
