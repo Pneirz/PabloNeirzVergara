@@ -12,6 +12,14 @@
   "summary": "Científico de datos senior y doctor en Ingeniería Informática por la Universidad Técnica Federico Santa María (UTFSM), con más de 10 años de experiencia en Python, machine learning, procesamiento de lenguaje natural (NLP), visión por computadora y análisis de big data. Investigación centrada en IA confiable (Trustworthy AI) y aprendizaje automático causal, con publicaciones en revistas de alto impacto como Scientific Reports (Nature Portfolio) y Algorithms (MDPI). En la industria, especializado en optimizar operaciones de comercio electrónico y pronósticos con modelos del estado del arte como TFT, NHITS, NBEATS y LightGBM, logrando precisiones de pronóstico consistentemente superiores al 90%. Experto en comunicar hallazgos complejos a equipos interdisciplinarios: 1.er y 3.er lugar en competencias internacionales de ciencia de datos, orador principal en eventos como FLISOL y entrevistado en el podcast de ProinChile en Spotify. Sólido dominio de técnicas de NLP (embeddings y similitud semántica entre conceptos), ingeniería de prompts con reglas y MCP, detección de patrones y visión por computadora (segmentación de imágenes, OCR, detección de objetos).",
   "experience": [
     {
+      "position": "Profesor part-time",
+      "company": "Universidad Técnica Federico Santa María",
+      "period": "Presente",
+      "location": "Chile",
+      "description": ["Docencia part-time en la Universidad Técnica Federico Santa María."],
+      "technologies": []
+    },
+    {
       "position": "Ingeniero Senior en Ciencia de Datos",
       "company": "MercadoLibre",
       "period": "Diciembre 2023 - Presente",
